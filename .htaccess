@@ -1,0 +1,13 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} !^www.pasians.cz
+#RewriteRule ^.*		http://www.pasians.cz/ [L,R=301]
+
+RewriteCond %{HTTP_HOST} !^www.predprodukce.cz
+RewriteRule ^.*		http://www.predprodukce.cz/ [L,R=301]
+
+</IfModule>
+
+# END WordPress

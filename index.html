@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<title>Pasiáns.cz - karetní hra online</title>
+	<meta name="keywords" content="pasiáns, solitér, solitaire, zdarma, karetní hra, pravidla" />
+	<meta name="description" content="Na této stránce si si můžete zahrát známou karetní hru známou jako pasiáns nebo solitér (solitaire)." />
+
+    <link rel="stylesheet" href="yui-tabview.css?v=1">
+    
+	<link rel="stylesheet" href="cards.css?v=2">
+	<!--[IF lt IE 9]>
+	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css?v=1">
+	<![ENDIF]-->
+
+    <style>
+    <!--
+    #selfpromo_ad {
+	width: 768px; 
+	height: 90px; 
+	margin: 20px auto -40px;
+    }
+
+    #selfpromo_ad img {
+	max-width: 768px;
+	width: 100%;
+    }
+
+    @media (max-width: 750px) {
+	#selfpromo_ad {
+	    margin: 20px 0px -40px 150px;
+	    width: 468px; 
+	    height: 60px; 
+	}
+    }
+
+    @media (min-width: 751px) and (max-width: 1050px) {
+	#selfpromo_ad {
+	    width: 468px; 
+	    height: 60px; 
+	}
+    }
+    -->
+    </style>
+
+	<script type="text/javascript">
+	/*
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-7535983-4']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	*/
+	</script>
+
+<!-- Cookie Consent plugin by Silktide - CSS hack -->
+<style type="text/css">
+.cc_message {
+	position: static;
+}
+</style>
+<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"Při poskytování našich služeb nám pomáhají soubory cookie. Využíváním našich služeb s jejich používáním souhlasíte.","dismiss":"Rozumím","learnMore":"Další informace","link":"http://www.google.com/intl/cs/policies/technologies/cookies/","theme":"dark-top"};
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+<!-- End Cookie Consent plugin -->
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>/*(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v3.2&appId=236489536534491";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));*/</script>
+
+	<div id="menu_wrapper">
+	<ul id="menu" class="top-menu">
+		<li class="begin">
+			<a id="new-deal">Nová hra</a>
+		</li>
+		<li>
+			<a id="restart">Restartovat hru</a>
+		</li>
+		<li>
+			<a id="choose-game">Výběr hry...</a>
+		</li>
+        <li>
+			<a id="undo">Zpět</a>
+		</li>
+		<li>
+			<a id="stats">Statistiky</a>
+		</li>
+        <li>
+			<a id="choose-options">Nastavení</a>
+		</li>
+		<li>
+			<a id="rules">Pravidla</a>
+		</li>
+        <li class="end">
+			<a id="about">O stránce</a>
+		</li>
+	</ul>
+	</div>
+
+	<div id="advBoxLeft">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- pasians.cz - responzivní banner (120x600) -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-0355182625291866"
+		     data-ad-slot="1241010006"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script> 
+	</div>
+
+<!-- <div id="selfpromo_ad">
+	 <iframe src="http://affil.danfil.cz/rotator/kid/1/affilid/cj95chce/velikost/728x90/metoda/directid/" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+	 </div> 
+-->
+
+	<!-- RULES -->
+	<div class="popup_wrapper">
+	<div id="rules-popup" class="hidden popup">
+		<div class="popup-content">
+			<button class="popup-button close-chooser">OK</button>
+		</div>
+	</div>
+	</div>
+	
+	<!-- ABOUT -->
+	<div class="popup_wrapper">
+	<div id="about-popup" class="hidden popup">
+		<div class="popup-content">
+		    <p>
+			Pokud se Vám stránka pasians.cz líbí dejte Like a řekněte o ní kamarádům. Díky :)
+		    </p>
+		    <p>
+			Pokud byste chtěli po partičce pasiánsu vyzkoušet s kolegy v práci strategičtější hru, doporučujeme <a class="external" href="https://sachy.cz" target="_Blank" title="Zkuste šachy online">šachy</a>, konkrétně novou českou online hernu <a class="external" href="https://sachy.cz" target="_Blank" title="Zkuste šachy online">šachy.cz</a>, kterou jsme pro vás připravili.
+		    </p>
+		    <p>
+			Další zajímavý projekt je <a class="external" href="http://casovapasma.cz">časová pásma.cz</a>, díky kterému se dozvíte přesný světový čas a časové pásmo ve Vámi zvoleném městě.
+		    </p>
+		    <button class="popup-button close-chooser">OK</button>
+		</div>
+	</div>
+	</div>
+	
+	<!-- GAME CHOOSER and rules content -->
+	<div class="popup_wrapper fake_popup">
+	<div id="game-chooser">
+	<div class="popup">
+		<div id="game-chooser-contents" class="popup-content">
+		<ul id="descriptions">
+			<li id="Klondike">
+				<h2>Pasians</h2>
+				<div class="description klondike">
+					<div class="layout"></div>
+					<h3>Pravidla</h3>
+					<blockquote>
+Pravidla pasiánsu (solitéru) jsou jednoduchá. Hráč vyhrává, pokud se mu povede poskládat čtyřy domácí hromádky (nahoře). Každá domácí hromádka musí začínat esem a končit králem. Pokud eso na začátku nemáte, můžete přesouvat karty mezi sloupci, abyste se k esu dostali. Toto přesouvání musí však splňovat následující pravidla: sloupce musí být řazeny sestupně (od krále po eso) a navíc se ve  sloupci musí střídat černá a červená barva.
+Přesouvat lze víc karet najednou - stačí kliknout na spodní kartu série, kterou chcete přesunout a vybrané karty přemístit. Do prázdných sloupců lze přemísťovat pouze krále. Pokud nemůžete udělat další tah, mmůžete vytáhnout vytáhnout další tři karty z balíčku vlevo nahoře. Pokud už v balíčku nejsou žádné karty, kliknutím na jeho obrys jej znovu promícháte. Přejeme hodně štěstí a trpělivosti při hře.
+					</blockquote>
+				</div>
+			</li>
+			<li id="klondike1t">
+				<h2>Klondike (Vegas Style)</h2>
+				<div class="description klondike1t">
+					<div class="layout"></div>
+					<h3>Vegas Klondike Solitaire Rules</h3>
+					<blockquote>
+Klondike Vegas is the gamblers variety of Klondike solitaire. In this game you turn over only one card from the waste at a time, but you�re not allowed to restock the deck. Since you only have once chance to play every card, you can see why casinos adopted this solitaire.
+					</blockquote>
+				</div>
+			</li>
+			<li id="freecell">
+				<h2>Freecell</h2>
+				<div class="description freecell">
+					<div class="layout"></div>
+					<h3>Freecell Solitaire Rules</h3>
+                                        <blockquote>
+Freecell is a fairly modern solitaire game that was popularized by its inclusion on many computer systems. Unlike most solitaires, almost no luck is involved and with strategy more than 99.9% of its games can be won.  Build the foundations up from Aces to Kings in suit. Build the tableaus down by rank and alternating color. Free tableau spaces can be filled by any card, and the free reserve cells can be filled by any one card at a time. Because of this, the length of the piles you can move is limited only by the amount of enough free cells and/or tableau openings. Strategize by building long runs and opening up tableau spaces as early as possible and you�ll be well on your way to winning almost every game of Freecell solitaire you play!
+					</blockquote>
+				</div>
+			</li>
+			<li id="spider1s">
+				<h2>Spider (1 Suite)</h2>
+				<div class="description spider1s">
+					<div class="layout"></div>
+					<h3>1 Suit Spider Solitaire Rules</h3>
+                                        <blockquote>
+1 Suit Spider is the easy version of Spider solitaire.
+                                        </blockquote>
+				</div>
+			</li>
+			<li id="spider2s">
+				<h2>Spider (2 Suite)</h2>
+				<div class="description spider2s">
+					<div class="layout"></div>
+					<h3>2 Suit Spider Solitaire Rules</h3>
+                                        <blockquote>
+This is the medium difficulty of Spider solitaire. Although not a breeze to win, most deals are in fact winnable, and its still a very skill-reliant type of solitaire.
+                                        </blockquote>
+				</div>
+			</li>
+			<li id="spider">
+				<h2>Spider</h2>
+				<div class="description spider">
+					<div class="layout"></div>
+					<h3>Spider Solitaire Rules</h3>
+                                        <blockquote>
+Spider has been called the �King of Solitaires,� and is rumored to have been a favoriate past-time with Franklin D. Roosevelt. This two pack solitaire tremendously rewards skill, and while not every hand is winnable, experience lets when take advantage of difficult deals much more than in any other solitaire game. To win, make and discard eight in-suit runs from Ace to King. The tableau piles are built downwards, regardless of suit. Any top card or in-suit run on a pile may be played the tableau or a free space. If you see no more available plays, click the deck to deal one card to each tableau pile; note that this can only be done if no piles are empty. Work to uncover as many cards as possible while opening up free spaces. Free spaces are extremely important in Spider solitaire as they let you easily organize out of suit piles and move longer runs of disorganized cards, so avoid playing Kings on them unless absolutely necessary.
+                                        </blockquote>
+				</div>
+			</li>
+		</ul>
+		<button class="popup-button close-chooser">OK</button>
+		</div>
+	</div>
+	</div>
+	</div>
+	
+	<!-- OPTIONS -->
+	<div class="popup_wrapper">
+	<div id="options-chooser" class="hidden popup">
+		<div class="popup-content">
+			<div class="tabview">
+				<ul>
+					<li><a href="#play-options">Herní volby</a></li>
+					<li><a href="#graphics-options">Karty</a></li>
+					<li><a href="#background-options">Pozadí</a></li>
+				</ul>
+				<div>
+					<div id="play-options">
+						<p>
+						<label for="animateCards-toggle">Animovat karty</label>
+						<input id="animateCards-toggle" type="checkbox" />
+						</p>
+						<p>
+						<label for="autoplay-toggle">Automaticky dohrát vyřešené hry</label>
+						<input id="autoplay-toggle" type="checkbox" />
+						</p>
+						<p>
+						<label for="autoFlip-toggle">Automaticky otáčet karty</label>
+						<input id="autoFlip-toggle" type="checkbox" />
+						</p>
+						<p class="hidden">
+						<label for="enableSolver-toggle">Enable Solver</label>
+						<input id="enableSolver-toggle" type="checkbox" />
+						</p> 
+					</div>
+					<div id="graphics-options">
+						<h3>Dostupné karty</h3>
+						<ul class="cards">
+						</ul>
+					</div>
+					<div id="background-options">
+						<h3>Pozadí</h3>
+						<ul class="backgrounds">
+						</ul>
+					</div>
+				</div>
+			</div>
+			<button class="popup-button close-chooser">OK</button>
+		</div>
+	</div>
+	</div>
+	
+	<img src=loading.gif class="loading hidden">
+	
+	<!-- UNUSED LINK -->
+	<div class="unused-block chromestore hidden">
+		<a class="hide">[Hide]</a>
+	</div>
+	
+	<!-- YesNo DIALOG -->
+	<div class="popup_wrapper">
+	<div id=confirmation class="hidden">
+		<div id=confirmation-popup class="popup">
+			<div class="popup-content">
+				<p id=confirmation-prompt></p>
+				<div class="popup-bottom-button-bar">
+					<button id=confirmation-deny class="popup-button">Ne</button>
+					<button id=confirmation-affirm class="popup-button">Ano</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<!-- STATS -->
+	<div class="popup_wrapper">
+	<div id="stats-popup" class="hidden popup">
+		<div class="popup-content">
+			<div class="popup-title-group">
+				<h3 class="stats-title"><span id="stats-game"></span> Statistiky hry</h3>
+				<ul class="popup-title-content hidden" >
+				</ul>
+			</div>
+			<div class="infogroup">
+				<div class="infopanel">
+					<p class="panelli">
+						<span class=panellabel>Odehráno her</span><span id=stats-gamesplayed class=panelvalue></span>
+					</p>
+					<p class="panelli">
+						<span class=panellabel>Procento výher</span><span id=stats-winpercentage class=panelvalue></span>
+					</p>
+					<p class="panelli">
+						<span class=panellabel>Počet výher</span><span id=stats-wins class=panelvalue></span>
+					</p>
+					<p class="panelli">
+						<span class=panellabel>Počet proher</span><span id=stats-loses class=panelvalue></span>
+					</p>
+					<p class="panelli">
+						<span class=panellabel>Aktuální vítězství v řadě</span><span id=stats-currentstreak class=panelvalue></span>
+					</p>
+					<p class="panelli">
+						<span class=panellabel>Nejvíce vítězství v řadě</span><span id=stats-beststreak class=panelvalue></span>
+					</p>
+				</div>
+			</div>
+			<div class="popup-bottom-button-bar">
+				<button class="popup-button close-chooser">OK</button>
+				<button id=stats-reset class="popup-button">Reset</button>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<!-- SOLVED -->
+	<div class="popup_wrapper">
+	<div id=win-display class="popup hidden">
+		<div class="popup-content">
+		<p class="gratulation">Vyhráli jste!</p>
+		<div class="popup-title-group">
+			<h3><span id="win-display-game" class="hidden"></span> Statistiky</h3>
+		</div>
+		<ul>
+			<li>Aktuální vítězství v řadě: <span id=win-display-streak class='streak'></span></li>
+			<li>Počet výher: <span id=win-display-wins class='wins'></span></li>
+			<li>Počet proher: <span id=win-display-loses class='loses'></span></li>
+		</ul>
+		<div class="replay_options">
+			<button class="new_deal popup-button">Nová hra</button>
+			<button class="choose_game popup-button hidden">Choose Game</button>
+		</div>
+		</div>
+	</div>
+	</div>
+	
+	<div id=seed-value-bar class="top-menu hidden">
+		Foundations start with <span id=seed-value></span>
+	</div>
+
+	<div id="solitaireBox"></div>
+
+	<script type="text/javascript" src="js/combined-min.js?v=2"></script>  
+
+	<noscript>
+	<div id="noscript" style="">
+		<img alt="Pasians" src="ns_bg.png" style="">
+		<div style="">
+			Hra vyžaduje zapnutý JavaScript ve Vašem prohlížeči.<br />
+			Návod na jeho zapnutí je v nápovědě Google AdSense - <a href="https://support.google.com/adsense/answer/12654?hl=cs" target="_blank">Povolení kódu JavaScript v prohlížeči</a>.
+		</div>
+		</div>
+	</noscript>
+	
+	<div id="logo_felt">
+	</div>
+	
+	<div id="logo_text">
+	<a href="/"><img src="pasians-logo-footer.png"></a>
+	</div>
+
+	<div id="fb_like">
+	<strong>Líbí se Vám pasiáns.cz? Klikněte na </strong>
+	<div class="fb-like" data-href="http://www.pasians.cz/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+	</div>
+
+	<div id="footer">
+	</div>
+	
+</body>
+</html>
