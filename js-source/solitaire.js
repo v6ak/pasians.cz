@@ -157,7 +157,7 @@ Y.mix(Solitaire, {
 	activeCard: null,
 	moves: null,
 	selector: "#solitaireBox",
-	offset: {left: 160+50, top: 70},
+	offset: {left: 0, top: 70},
 	padding: {x: 50, y: 50},
 	widthScale: 0,
 
@@ -451,6 +451,7 @@ Y.mix(Solitaire, {
 		this.scale(scale);
 
 		this.unanimated(function () {
+			var maxLeft = 0;
 			this.eachStack(function (stack, i) {
 				var cards = stack.cards,
 				    layout = stack.configLayout;
@@ -476,7 +477,12 @@ Y.mix(Solitaire, {
 				});	
 
 				stack.update();
+				if (stack.left > maxLeft ) {
+					maxLeft = stack.left;
+				}
 			});
+			let maxWidth = maxLeft + this.Card.width;
+			this.container().setStyle('width', maxWidth + "px");
 		});
 	},
 

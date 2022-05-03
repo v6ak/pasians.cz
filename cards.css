@@ -917,7 +917,8 @@ a.external {
 	float: left;
 }
 #solitaireBox {
-	margin-left: 60px;
+	margin-left: auto;
+	margin-right: auto;
 }
 #stats-popup .stats-title {
 	background-image: none;
