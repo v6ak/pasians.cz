@@ -68,7 +68,7 @@ clean:
 	rm -rf js/combined-min.js intermediate
 
 js/combined-min.js: $(JS_PARTS)
-	cat $? > $@.tmp
+	cat $^ > $@.tmp
 	$(ADD_SEPARATOR)
 	$(FINALIZE)
 intermediate/yui-all-min-cropped.js: js-source/yui-all-min.js
@@ -77,6 +77,7 @@ intermediate/yui-all-min-cropped.js: js-source/yui-all-min.js
 	$(ADD_SEPARATOR)
 	$(FINALIZE)
 intermediate/%.min.js: js-source/%.js $(YUI_COMPRESSOR)
+	mkdir -p intermediate
 	java -jar $(YUI_COMPRESSOR) $< -o $@.tmp
 	$(ADD_SEPARATOR)
 	$(FINALIZE)
