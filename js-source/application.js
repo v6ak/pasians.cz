@@ -925,6 +925,7 @@
 					active.game.cleanup();
 					active.game.loadGame(save.serialized);
 				} catch (e) {
+					console.error('error loading saved game', e);
 					playGame(active.name);
 				}
 			} else {
