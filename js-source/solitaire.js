@@ -139,7 +139,8 @@ Object.prototype.mapAppend = function (str) {
 
 var Game;
 
-YUI.add("solitaire", function (Y) {
+
+YUI().add("solitaire", function (Y) {
 
 var Solitaire = Y.namespace("Solitaire");
 
@@ -364,7 +365,7 @@ Y.mix(Solitaire, {
 		container.delegate("contextmenu", Game.autoPlay, ".card");
 
 		container.delegate("click", Game.Events.click, ".card");
-		container.delegate("touchend", Game.Events.click, ".card");
+		//container.delegate("touchend", Game.Events.click, ".card");
 
 		Y.after("solitaire|endTurn", Game.Events.endTurn);
 		Y.on("solitaire|undo", Game.Events.undo);
@@ -516,26 +517,26 @@ Y.mix(Solitaire, {
 
 		this.scale(1);
 
-		fields = Y.Array.map(Game.fields, function (field) {
+		fields = Game.fields.map(function (field) {
 			return Game[field.toLowerCase()] = Game.createField(Game[field]);
 		});
-
+		
 		// TODO: refactor this conditional into the above iteration
 		if (Game.fields.indexOf("Deck" === -1)) {
 			Game.deck = Game.createField(Game.Deck);
 		}
 
 		// find the game/card width ratio
-		minX = Math.min.apply(Math, Y.Array.map(fields, function (f) {
-			return Y.Array.map(f.stacks, function (s) { return s.left; });
+		minX = Math.min.apply(Math, fields.map(function (f) {
+			return f.stacks.map(function (s) { return s.left; });
 		}).flatten());
 
 		/*
 		 * assume the leftmost point is the leftmost field
 		 * if it isn't, you should override Solitaire.width
 		 */
-		maxX = Math.max.apply(Math, Y.Array.map(fields, function (f) {
-			return Y.Array.map(f.stacks, function (s) { return s.left; });
+		maxX = Math.max.apply(Math, fields.map(function (f) {
+			return f.stacks.map(function (s) { return s.left; });
 		}).flatten()) + this.Card.width;
 
 		this.widthScale = (maxX - minX) / this.Card.base.width;
@@ -1675,5 +1676,5 @@ var Undo = {
 		return [to, from];
 	}
 };
+}, "0.0.1", {requires: ['event-touch', 'async-queue', "save-manager", "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras"]});
 
-}, "0.0.1", {requires: ["save-manager", "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras"]});

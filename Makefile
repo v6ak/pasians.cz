@@ -1,7 +1,12 @@
+# Adjust the path to YUI compressor on your machine
 YUI_COMPRESSOR=~/Downloads/yuicompressor-2.4.8.jar
+
+include yui.mk
+YUI_FILES_PATHS=$(foreach name,$(YUI_FILES), intermediate/yui/$(YUI_VERSION)/$(name))
+
+
 JS_PARTS=\
 	intermediate/yui-all-min-cropped.js \
-	intermediate/yui-breakout.min.js \
 	intermediate/save-manager.min.js \
 	intermediate/analytics.min.js \
 	intermediate/ads.min.js \
@@ -71,9 +76,9 @@ js/combined-min.js: $(JS_PARTS)
 	cat $^ > $@.tmp
 	$(ADD_SEPARATOR)
 	$(FINALIZE)
-intermediate/yui-all-min-cropped.js: js-source/yui-all-min.js
-	mkdir -p intermediate
-	cat $< | sed -n '1,/YUI\.add("event-touch"/ p' | sed '/YUI\.add("event-touch"/ s#/\*$$##' | head -c -1 > $@.tmp
+
+intermediate/yui-all-min-cropped.js: $(YUI_FILES_PATHS) yui.mk
+	cat $(YUI_FILES_PATHS) > $@.tmp
 	$(ADD_SEPARATOR)
 	$(FINALIZE)
 intermediate/%.min.js: js-source/%.js $(YUI_COMPRESSOR)
@@ -81,4 +86,8 @@ intermediate/%.min.js: js-source/%.js $(YUI_COMPRESSOR)
 	java -jar $(YUI_COMPRESSOR) $< -o $@.tmp
 	$(ADD_SEPARATOR)
 	$(FINALIZE)
-	
+
+intermediate/yui/$(YUI_VERSION)/%:
+	dirname $@ | xargs mkdir -p
+	wget https://unpkg.com/yui@$(YUI_VERSION)/$* -O $@.tmp
+	$(FINALIZE)

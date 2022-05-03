@@ -47,4 +47,4 @@ Y.mix(SaveManager, {
 		Y.Cookie.remove("initial-game");
 	}
 });
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: ["solitaire", 'cookie']});
