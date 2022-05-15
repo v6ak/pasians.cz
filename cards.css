@@ -918,8 +918,8 @@ a.external {
 	float: left;
 }
 #solitaireBox {
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 150px;
+	margin-right: 2%;
 }
 #stats-popup .stats-title {
 	background-image: none;
@@ -935,4 +935,15 @@ a.external {
 }
 #stats-popup .popup-title-content {
 	display: none;
+}
+
+
+@media (max-width : 480px) {
+	#advBoxTop, #advBoxLeft {
+		display: none;
+	}
+	#solitaireBox {
+		margin-left: 5%;
+		margin-right: 2%;
+	}
 }

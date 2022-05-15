@@ -879,9 +879,10 @@
 		    el = game.container(),
 		    padding = game.padding,
 		    offset = game.offset,
-		    width = el.get("winWidth") - padding.x - 50,
+		    width = el.get("winWidth") - padding.x - game.horizontalReservedSpace(),
 		    height = el.get("winHeight") - padding.y,
 		    ratio = 1;
+		console.log('el.get("winWidth") - padding.x - 200', el.get("winWidth"), padding.x, 200);
 
 		Y.Solitaire.Application.windowHeight = height;
 		ratio = Math.min((width - normalize(offset.left)) / game.width(), (height - normalize(offset.top)) / game.height());
