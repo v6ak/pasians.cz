@@ -72,6 +72,18 @@ all: js/combined-min.js
 clean:
 	rm -rf js/combined-min.js intermediate
 
+final: all
+	# Copies only what is needed in the final site, without any source/intermediate files
+	rm -rf final final.tmp
+	mkdir final.tmp
+	# We skip: js-source *.mk Makefile
+	cp -ra \
+		*.jpg *.png *.css air ancient_egyptians backgrounds classic dondorf font *.html jolly-royal js *.gif layouts mobile paris \
+		final.tmp
+
+	$(FINALIZE)
+
+
 js/combined-min.js: $(JS_PARTS)
 	cat $^ > $@.tmp
 	$(ADD_SEPARATOR)
@@ -91,3 +103,5 @@ intermediate/yui/$(YUI_VERSION)/%:
 	dirname $@ | xargs mkdir -p
 	wget https://unpkg.com/yui@$(YUI_VERSION)/$* -O $@.tmp
 	$(FINALIZE)
+
+.phony: all clean
