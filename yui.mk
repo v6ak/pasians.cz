@@ -55,3 +55,20 @@ YUI_FILES=\
 	anim-easing/anim-easing-min.js \
 	event-flick/event-flick-min.js \
 	event-move/event-move-min.js \
+	attribute-complex/attribute-complex-min.js \
+	event-focus/event-focus-min.js \
+	widget-base/widget-base-min.js \
+	widget-htmlparser/widget-htmlparser-min.js \
+	widget-skin/widget-skin-min.js \
+	widget-uievents/widget-uievents-min.js \
+	arraylist/arraylist-min.js \
+	widget-parent/widget-parent-min.js \
+	widget-child/widget-child-min.js \
+	tabview-base/tabview-base-min.js \
+	plugin/plugin-min.js \
+	event-simulate/event-simulate-min.js \
+	gesture-simulate/gesture-simulate-min.js \
+	node-event-simulate/node-event-simulate-min.js \
+	event-key/event-key-min.js \
+	node-focusmanager/node-focusmanager-min.js \
+	tabview/tabview-min.js \
