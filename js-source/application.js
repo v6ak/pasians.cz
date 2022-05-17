@@ -174,6 +174,7 @@
 				popupNode().one("button").insert(description, "before");
 				popupNode().removeClass("hidden");
 				Fade.show();
+				document.body.style.overflow = 'auto';
 				visible = true;
 			},
 
@@ -183,6 +184,7 @@
 				sourceNode().appendChild(description);
 				popupNode().addClass("hidden");
 				Fade.hide();
+				document.body.style.overflow = null;
 				visible = false;
 			}
 		};
@@ -833,6 +835,7 @@
 
 		Y.on("Application|popup", function (popup) {
 			winPopup().addClass("hidden");
+			document.body.style.overflow = 'auto';
 
 			switch (popup) {
 			case "GameChooser":

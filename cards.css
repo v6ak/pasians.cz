@@ -135,7 +135,7 @@ p {
 }
 
 #game-chooser .popup {
-	width: 870px;
+	max-width: 870px;
 }
 
 #game-chooser.show {
@@ -547,9 +547,14 @@ button:hover {
 	padding-top: 35px;
 	padding-bottom: 100%;
 }
+.popup_wrapper:after, .popup:after{
+    clear: both;
+    content: "";
+    display: block;
+}
 
 .popup {
-	width: 700px;
+	max-width: 700px;
 	margin: 25px auto;
 	padding: 7px;
 	background: #000000df;
@@ -645,7 +650,7 @@ button:hover {
 }
 
 #options-chooser {
-	width: 730px;
+	max-width: 730px;
 }
 
 #background {
