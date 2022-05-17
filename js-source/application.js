@@ -165,7 +165,12 @@
 
 		return {
 			show: function () {
-				description = sourceNode().one(".description");
+				let source = sourceNode();
+				if (!source) {
+					alert("Tato hra (" + active.name + ") nemá sepsaná pravidla!")
+					return;
+				}
+				description = source.one(".description");
 				popupNode().one("button").insert(description, "before");
 				popupNode().removeClass("hidden");
 				Fade.show();
