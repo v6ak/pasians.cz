@@ -957,11 +957,11 @@ a.external {
 #advBoxLeft {
 	width: 120px;
 	height: 600px;
-	margin: 20px 0 0;
+	margin-top: 20px;
 	float: left;
 }
 #solitaireBox {
-	margin-left: 150px;
+	margin-left: 270px;	/* includes space for ad */
 	margin-right: 2%;
 }
 #stats-popup .stats-title {
