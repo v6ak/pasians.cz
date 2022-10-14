@@ -66,9 +66,9 @@ JS_PARTS=\
 ADD_SEPARATOR=
 
 FINALIZE=mv $@.tmp $@
+FINGERPRINTED_ASSETS=cards.css js/combined-min.js
 
-
-all: js/combined-min.js
+all: js/combined-min.js index.html
 clean:
 	rm -rf js/combined-min.js intermediate
 
@@ -78,10 +78,17 @@ final: all
 	mkdir final.tmp
 	# We skip: js-source *.mk Makefile
 	cp -ra \
-		*.jpg *.png *.css air ancient_egyptians backgrounds classic dondorf font *.html jolly-royal js *.gif layouts mobile paris \
+		*.jpg *.png *.css air ancient_egyptians backgrounds classic dondorf font index.html jolly-royal js *.gif layouts mobile paris \
 		final.tmp
 
 	$(FINALIZE)
+
+index.html: index.source.html $(FINGERPRINTED_ASSETS) Makefile
+	# Add asset fingerprints
+	sed $(shell sha256sum $(FINGERPRINTED_ASSETS) | sed 's/\(.*\)  \(.*\)/-e s#\2#\2?\1#/') $< > $@-fingerprinted.tmp
+	# Minify the file. It also prevents developer from accidental editing of the generated source.
+	cat $@-fingerprinted.tmp | sed -z 's/\([ \t\r\n]\+\)/ /g' > $@.tmp
+	mv $@.tmp $@
 
 
 js/combined-min.js: $(JS_PARTS)
