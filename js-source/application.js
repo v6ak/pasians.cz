@@ -9,6 +9,17 @@
 			return node;
 		};
 	}
+	
+	function styleForPopup(){
+		document.body.style.overflow = 'auto';
+		document.body.style.touchAction = 'auto';
+	}
+
+	function styleForNoPopup(){
+		document.body.style.overflow = null;
+		document.body.style.touchAction = null;
+		document.querySelector('html').scrollTo(0, 0)
+	}
 
 	var active = {
 		name: "Klondike",
@@ -174,7 +185,7 @@
 				popupNode().one("button").insert(description, "before");
 				popupNode().removeClass("hidden");
 				Fade.show();
-				document.body.style.overflow = 'auto';
+				styleForPopup();
 				visible = true;
 			},
 
@@ -184,7 +195,7 @@
 				sourceNode().appendChild(description);
 				popupNode().addClass("hidden");
 				Fade.hide();
-				document.body.style.overflow = null;
+				styleForNoPopup();
 				visible = false;
 			}
 		};
@@ -369,6 +380,7 @@
 
 		hide: function () {
 			Fade.hide();
+			styleForNoPopup();
 			this.element().addClass("hidden");
 		}
 	},
@@ -781,6 +793,7 @@
 		hide: function () {
 			this.active = false;
 			this.node().addClass("hidden");
+			styleForNoPopup();
 		},
 
 		show: function (prompt, callback) {
@@ -800,6 +813,7 @@
 			statsPopup().addClass("hidden");
 			aboutPopup().addClass("hidden");
 			Fade.hide();
+			styleForNoPopup();
 		    };
 
 		Y.on("click", restart, Y.one("#restart"));
@@ -835,7 +849,7 @@
 
 		Y.on("Application|popup", function (popup) {
 			winPopup().addClass("hidden");
-			document.body.style.overflow = 'auto';
+			styleForPopup();
 
 			switch (popup) {
 			case "GameChooser":
