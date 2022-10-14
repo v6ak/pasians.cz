@@ -273,6 +273,13 @@
 			if (previous && previous !== game) {
 				Y.fire("gamechooser:select", this);
 			}
+			if (previous !== null) {
+				console.log("reloading because previous !== game", previous, game);
+				window.location.reload();
+			} else {
+				//alert(["Not reloading: ", previous, game, this.game, this.game ? this.game.name : "no game"].join("\n"));
+				console.log("Not reloading: ", previous, game, this.game, this.game ? this.game.name : "no game");
+			}
 		},
 
 		unSelect: function () {
