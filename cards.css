@@ -894,10 +894,27 @@ a.external {
 	left: 160px;
 	bottom: 35px;
 	background: url("pasians-logo-felt.png") no-repeat;
+	background-size: contain;
+	background-position: bottom;
 	width: 387px;
 	height: 150px;
 	opacity: 0.5;
 }
+
+@media (max-width: /*160px+387px+5px = */552px) {
+	#logo_felt {
+		right: 0px;
+		left: auto;
+	}
+}
+
+@media (max-width: 387px) {
+	#logo_felt {
+		left: 0px;
+		width: auto;
+	}
+}
+
 
 #logo_text {
 	position: fixed;
