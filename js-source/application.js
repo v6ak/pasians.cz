@@ -1,11 +1,5 @@
 (function () {
-	function setClass(element, className, shallBePresent) {
-		if (shallBePresent) {
-			element.classList.add(className);
-		} else {
-			element.classList.remove(className);
-		}
-	}
+	const MIN_SIDE_AD_ALWAYS_ENABLED = 768;
 	
 	function cacheNode(selector) {
 		var node;
@@ -935,17 +929,25 @@
 	}
 
 	function resize() {
+		// Calculation of dimensions is based on outer sizes. It can't be based on the solitaireBox
+		// size, because solitaireBox size is influenced by this calculation, not vice versa.
 		var game = active.game,
+		    // makes space for ad even if it makes the solitaireBox smaller
+		    makeSpaceForAd = (window.location.search.indexOf("force-ad") != -1) ||
+				(document.body.clientWidth >= MIN_SIDE_AD_ALWAYS_ENABLED),
 		    el = game.container(),
 		    padding = game.padding,
 		    offset = game.offset,
-		    width = el.get("winWidth") - padding.x - game.horizontalReservedSpace(),
+		    width = document.body.clientWidth -
+				game.horizontalReservedSpace() -
+				(makeSpaceForAd ? game.sideAdWidth() : 0),
 		    height = el.get("winHeight") - padding.y,
 		    ratio = 1;
-		console.log('el.get("winWidth") - padding.x - 200', el.get("winWidth"), padding.x, 200);
-
 		Y.Solitaire.Application.windowHeight = height;
-		ratio = Math.min((width - normalize(offset.left)) / game.width(), (height - normalize(offset.top)) / game.height());
+		ratio = Math.min(
+			(width - normalize(offset.left)) / game.width(),
+			(height - normalize(offset.top)) / game.height()
+		);
 
 		Y.fire("fieldResize", ratio, width, height);
 		GameChooser.refit();
@@ -996,8 +998,6 @@
 		setClass(menuElement, 'one-line', isOneLine);
 		setClass(menuElement, 'overflows', !isOneLine);
 		setMenuExpanded(false)
-		console.log("isOneLine: ", isOneLine);
-		
 	}
 
 	function playGame(name) {
@@ -1010,7 +1010,7 @@
 	function lookupGame(name) {
 		return Y.Solitaire[games[name]] || Y.Solitaire[name];
 	}
-
+	
 	function load() {
 		var save = Y.Solitaire.SaveManager.getSavedGame();
 
@@ -1047,7 +1047,6 @@
 	
 	function initDebug() {
 		['debug-solitaireBox', 'debug-ads'].forEach(function (i) {
-			console.log("i=", i)
 			if (window.location.search.indexOf(i) != -1) {
 				document.body.classList.add(i);
 			}

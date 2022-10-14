@@ -956,12 +956,15 @@ a.external {
 	width: 120px;
 	height: 600px;
 	margin-top: 20px;
+	margin-right: 150px;
 	float: left;
 }
 #solitaireBox {
-	margin-left: 270px;	/* includes space for ad */
-	margin-right: 2%;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
 }
+
 #stats-popup .stats-title {
 	background-image: none;
 	background: none;
@@ -978,17 +981,12 @@ a.external {
 	display: none;
 }
 
-
-@media (max-width : 768px) {
-	#advBoxTop, #advBoxLeft {
-		display: none;
-	}
-	#solitaireBox {
-		margin-left: 5%;
-		margin-right: 2%;
-	}
+#advBoxLeft {
+	display: none;
 }
-
+.side-ads #advBoxLeft {
+	display: block;
+}
 
 
 /* debug */

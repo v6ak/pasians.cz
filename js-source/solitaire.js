@@ -1,3 +1,11 @@
+function setClass(element, className, shallBePresent) {
+	if (shallBePresent) {
+		element.classList.add(className);
+	} else {
+		element.classList.remove(className);
+	}
+}
+
 if (!Array.prototype.indexOf) {
   Array.prototype.indexOf = function(elt /*, from*/)  {  
     var len = this.length >>> 0;  
@@ -158,15 +166,15 @@ Y.mix(Solitaire, {
 	activeCard: null,
 	moves: null,
 	selector: "#solitaireBox",
-	offset: {left: 0, top: 10},
+	offset: {left: 15, top: 10},
 	padding: {x: 0, y: 50},
 	widthScale: 0,
 	
 	horizontalReservedSpace: function(){
 		let computedContainerStyle = window.getComputedStyle(this.container()._node);
-		let containerMarginLeft = Number.parseFloat(computedContainerStyle.marginLeft);
-		let containerMarginRight = Number.parseFloat(computedContainerStyle.marginRight);
-		return containerMarginLeft + containerMarginRight;
+		let containerPaddingLeft = Number.parseFloat(computedContainerStyle.paddingLeft);
+		let containerPaddingRight = Number.parseFloat(computedContainerStyle.paddingRight);
+		return containerPaddingLeft + containerPaddingRight;
 	},
 
 	noop: function () {},
@@ -454,6 +462,18 @@ Y.mix(Solitaire, {
 			fname === currentName && field.stacks && Y.Array.each(field.stacks, callback);
 		});
 	},
+	
+	sideAdWidth: function() {
+		const el = document.querySelector('#advBoxLeft');
+		let style = window.getComputedStyle(el);
+		
+		const result = Number.parseFloat(style.marginLeft) +
+			Number.parseFloat(style.marginRight) +
+			Number.parseFloat(style.width);
+		
+		this.sideAdWidth = function(){return result};
+		return this.sideAdWidth();
+	},
 
 	resize: function (scale, width, height) {
 		this.scale(scale);
@@ -490,8 +510,25 @@ Y.mix(Solitaire, {
 				}
 			});
 			// limit size to what is needed
-			//let maxWidth = maxLeft + this.Card.width - this.horizontalReservedSpace();
-			//this.container().setStyle('max-width', maxWidth + "px");
+			let maxWidth = maxLeft + this.Card.width;
+			const horizontalFreeSpace = document.body.clientWidth - maxWidth;
+			const adWidth = this.sideAdWidth();
+			const showSideAds = horizontalFreeSpace > adWidth;
+			const needsSpaceForLeftAd = showSideAds && !(horizontalFreeSpace/2 > adWidth);
+			setClass(document.body, 'side-ads', showSideAds);
+			function calcMarginLeft() {
+				if (needsSpaceForLeftAd){
+					const halfFreeSpace = (horizontalFreeSpace - adWidth)/2;
+					//return adWidth + (halfFreeSpace >= 10 ? halfFreeSpace : 0); // make space for the ad and then center
+					return adWidth;  // make space for the ad and then aligh left
+				}else {
+					// just center
+					return null;
+				}
+			}
+			
+			this.container().setStyle('margin-left', calcMarginLeft());
+			this.container().setStyle('max-width', maxWidth + "px");
 		});
 	},
 
