@@ -83,6 +83,7 @@ a {
 
 #menu {
 	display: table;
+	overflow: hidden;
 	height: 35px;
 	margin: 0 auto;
 	border-radius: 0 0 15px 15px;
@@ -91,7 +92,27 @@ a {
 	font-size: 16px;
 	list-style: none;
 }
-
+#menu.overflows.collapsed {
+	display: block;
+}
+#menu.expanded {
+	display: table;
+	overflow: auto;
+	height: auto;
+}
+/* hide expander/collapser in one-line menu */
+#menu.one-line .expander, #menu.one-line .collapser {
+	display: none;
+}
+/* show only expander/collapser based on menu state*/
+#menu.expanded .expander, #menu.collapsed .collapser {
+	display: none;
+}
+#menu .expander, #menu .collapser {
+	float: right;
+	min-width: 50px;
+	text-align: center;
+}
 #menu li {
 	height: 35px;
 	float: left;

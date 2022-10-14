@@ -1,4 +1,12 @@
 (function () {
+	function setClass(element, className, shallBePresent) {
+		if (shallBePresent) {
+			element.classList.add(className);
+		} else {
+			element.classList.remove(className);
+		}
+	}
+	
 	function cacheNode(selector) {
 		var node;
 
@@ -914,6 +922,52 @@
 		Fade.resize();
 		Backgrounds.resize();
 		Confirmation.resize();
+		menuResized();
+	}
+	
+	function setMenuExpanded(state) {
+		let menuElement = document.getElementById("menu");
+		setClass(menuElement, 'collapsed', !state);
+		setClass(menuElement, 'expanded', state);
+	}
+
+	function initMenu() {
+		setMenuExpanded(false)
+		let menuElement = document.getElementById("menu");
+		function createMenuStateSetter(state){
+			return function(e){
+				setMenuExpanded(state);
+				console.log(e)
+				e.stopPropagation();
+			}
+		}
+		Y.on("click", createMenuStateSetter(true), Y.one(".expander"));
+		Y.on("click", createMenuStateSetter(false), Y.one(".collapser"));
+		Y.on("click", function(){setMenuExpanded(false)}, Y.one("body"));
+	}
+
+	
+	function menuResized() {
+		console.log("menu resized");
+		let menuElement = document.getElementById("menu");
+		let isOneLine = Array.from(menuElement.childNodes).
+			map(function(a){
+				// get the positions
+				return a.offsetTop;
+			}).
+			filter(function(x){
+				// skip #text and other items without positions
+				return x != undefined;
+			}).
+			every(function(value, i, arr){
+				// check if all are the same
+				return value == arr[0];
+			});
+		setClass(menuElement, 'one-line', isOneLine);
+		setClass(menuElement, 'overflows', !isOneLine);
+		setMenuExpanded(false)
+		console.log("isOneLine: ", isOneLine);
+		
 	}
 
 	function playGame(name) {
@@ -955,6 +1009,7 @@
 				playGame(active.name);
 			}
 		});
+		initMenu();
 
 		GameChooser.init();
 	}
