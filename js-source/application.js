@@ -681,9 +681,18 @@
 			if (selected.repeat) {
 				this.imageNode().hide();
 				this.node().setStyle("backgroundImage", "url(" + selected.image + ")");
+				this.setStyle(
+					"#descriptions .description {background-image: url(" + selected.image + "); }"
+				);
 			} else {
 				this.node().setStyle("backgroundImage", "none");
 				this.imageNode().set("src", selected.image).show();
+				this.setStyle(
+					"#descriptions .description {"+
+					"background-size: cover;"+
+					"background-image: url(" + selected.image + ");"+
+					"}"
+				);
 			}
 		},
 
@@ -710,6 +719,20 @@
 
 			img.show();
 		},
+		setStyle: function(rules){
+			if (!this.styleNode) {
+				let style = new CSSStyleSheet();
+				// https://developer.mozilla.org/en-US/docs/Web/API/Document/adoptedStyleSheets
+				// “If the array needs to be modified, then a new array must be assigned (in-place
+				// mutations like push() will throw an exception).”
+				// While in-place modifications seem to work today (Oct 2022), I'd like to do it in
+				// the recommended way, as it is more future-proof.
+				document.adoptedStyleSheets = document.adoptedStyleSheets.concat([style]);
+				this.styleNode = style;
+			}
+			this.styleNode.replaceSync(rules);
+		},
+
 
 		imageNode: cacheNode("#background-image"),
 		node: function () {

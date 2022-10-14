@@ -212,13 +212,11 @@ p {
 	cursor: pointer;
 }
 
-#descriptions li:hover .layout {
-	background-color: #666;
+#descriptions .description {
+	opacity: 0.75;
 }
-
-#game-chooser .layout,
-#game-chooser .selected .layout {
-	background-color: #444;
+#descriptions li:hover .description {
+	opacity: 1;
 }
 
 .close {
