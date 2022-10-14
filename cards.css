@@ -990,3 +990,13 @@ a.external {
 		margin-right: 2%;
 	}
 }
+
+
+
+/* debug */
+.debug-ads #advBoxLeft, .debug-ads #advBoxTop {
+	background-color: red;
+}
+.debug-solitaireBox #solitaireBox {
+	border: 1px solid red;
+}

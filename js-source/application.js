@@ -1010,8 +1010,18 @@
 			}
 		});
 		initMenu();
+		initDebug();
 
 		GameChooser.init();
+	}
+	
+	function initDebug() {
+		['debug-solitaireBox', 'debug-ads'].forEach(function (i) {
+			console.log("i=", i)
+			if (window.location.search.indexOf(i) != -1) {
+				document.body.classList.add(i);
+			}
+		})
 	}
 
 	function clearDOM() {
