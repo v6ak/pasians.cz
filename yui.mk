@@ -72,3 +72,6 @@ YUI_FILES=\
 	event-key/event-key-min.js \
 	node-focusmanager/node-focusmanager-min.js \
 	tabview/tabview-min.js \
+	json-parse/json-parse-min.js \
+	json-stringify/json-stringify-min.js \
+	

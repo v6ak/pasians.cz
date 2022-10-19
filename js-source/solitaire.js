@@ -1760,5 +1760,5 @@ var Undo = {
 		return [to, from];
 	}
 };
-}, "0.0.1", {requires: ['event-touch', 'async-queue', "save-manager", "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras"]});
+}, "0.0.1", {requires: ['event-touch', 'async-queue', "save-manager", "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras", "json-parse", "json-stringify"]});
 

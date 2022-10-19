@@ -70,6 +70,8 @@
 
 	    extensions = [
 		"json",
+		"json-parse",
+		"json-stringify",
 		"tabview",
 		"util",
 		"auto-turnover",
