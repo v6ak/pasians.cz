@@ -6,6 +6,44 @@ function setClass(element, className, shallBePresent) {
 	}
 }
 
+function isTestSite(){
+	return !window.location.host.endsWith("pasians.cz");
+}
+
+let adsenseScriptTag = null;
+
+function loadAds(selector, show) {
+	if(show){
+		let adAdded = false;
+		document.querySelectorAll(selector).forEach(function(el){
+			console.log('will enable ad for ', el);
+			el.className = 'adsbygoogle';
+			if(isTestSite()){
+				el.setAttribute("data-ad-test", "on");
+			}
+			adAdded = true;
+			
+		});
+		if (adAdded) {
+			console.log('will request to load ads');
+			try{
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				console.log('requested to load ads');
+			}catch(e){
+				console.exception('failed to request to load ads', e);
+			}
+			if(adsenseScriptTag == null){
+				// add AdSense script tag, as it is missing.
+				const ast = document.createElement('script');
+				ast.setAttribute("async", "");
+				ast.setAttribute("src", "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
+				document.body.appendChild(ast);
+				adsenseScriptTag = ast;
+			}
+		}
+	}
+}
+
 if (!Array.prototype.indexOf) {
   Array.prototype.indexOf = function(elt /*, from*/)  {  
     var len = this.length >>> 0;  
@@ -516,6 +554,7 @@ Y.mix(Solitaire, {
 			const showSideAds = horizontalFreeSpace > adWidth;
 			const needsSpaceForLeftAd = showSideAds && !(horizontalFreeSpace/2 > adWidth);
 			setClass(document.body, 'side-ads', showSideAds);
+			loadAds('#advBoxLeft .adsbygoogle-placeholder', showSideAds);
 			function calcMarginLeft() {
 				if (needsSpaceForLeftAd){
 					const halfFreeSpace = (horizontalFreeSpace - adWidth)/2;

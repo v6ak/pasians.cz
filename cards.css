@@ -996,3 +996,7 @@ a.external {
 .debug-solitaireBox #solitaireBox {
 	border: 1px solid red;
 }
+ins[data-ad-test="on"] {
+	background-color: rgba(255, 0, 0, 0.1);
+	min-height: 100px;
+}
