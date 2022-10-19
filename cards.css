@@ -529,7 +529,7 @@ button:hover {
 
 .description blockquote {display: none;}
 .description h3 {display: none;}
-.description p {display: none;}
+/*.description p {display: none;}*/
 
 .chromestore {
 	position: fixed;
