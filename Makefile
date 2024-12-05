@@ -4,6 +4,11 @@ YUI_COMPRESSOR=~/Downloads/yuicompressor-2.4.8.jar
 include yui.mk
 YUI_FILES_PATHS=$(foreach name,$(YUI_FILES), intermediate/yui/$(YUI_VERSION)/$(name))
 
+#NPM_SOURCE=https://cdn.jsdelivr.net/npm
+#NPM_SOURCE=https://unpkg.com
+NPM_SOURCE=https://cdnjs.cloudflare.com/ajax/libs
+#NPM_VERSION_SEPARATOR=@
+NPM_VERSION_SEPARATOR=/
 
 JS_PARTS=\
 	intermediate/yui-all-min-cropped.js \
@@ -109,7 +114,7 @@ intermediate/%.min.js: js-source/%.js $(YUI_COMPRESSOR)
 
 intermediate/yui/$(YUI_VERSION)/%:
 	dirname $@ | xargs mkdir -p
-	wget https://unpkg.com/yui@$(YUI_VERSION)/$* -O $@.tmp
+	wget $(NPM_SOURCE)/yui$(NPM_VERSION_SEPARATOR)$(YUI_VERSION)/$* -O $@.tmp
 	$(FINALIZE)
 
 .phony: all clean
