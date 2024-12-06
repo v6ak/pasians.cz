@@ -25,7 +25,7 @@ jobs:
       run: wget -O ../yuicompressor-2.4.8.jar https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar
 
     - name: Build
-      run: make YUI_COMPRESSOR=../yuicompressor-2.4.8.jar final
+      run: make YUI_COMPRESSOR=../yuicompressor-2.4.8.jar -j9 final
 
     - uses: actions/upload-artifact@v4
       with:
