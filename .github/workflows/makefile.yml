@@ -31,3 +31,15 @@ jobs:
       with:
         name: pasians-site
         path: final
+
+    - run: mkdir staging-dist
+
+    - run: cp -ra final staging-dist/cekej
+
+    - name: Publish to Cloudflare Pages
+      uses: cloudflare/pages-action@v1
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: 991b370147d5a485555e591f6f087b22
+        projectName: trpelivost
+        directory: staging-dist
