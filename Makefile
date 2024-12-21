@@ -52,6 +52,7 @@ JS_PARTS=\
 	intermediate/bisley.min.js \
 	intermediate/kingalbert.min.js \
 	intermediate/application.min.js \
+	intermediate/yui-breakout.min.js
 	# ommited files:
 	# multiplicities:
 	# * analytics is there only once (it used to be twice there)
