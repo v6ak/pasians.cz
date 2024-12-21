@@ -97,7 +97,7 @@ index.html: index.source.html $(FINGERPRINTED_ASSETS) Makefile
 
 
 js/combined-min.js: $(JS_PARTS)
-	mkdir js
+	mkdir -p js
 	cat $^ > $@.tmp
 	$(ADD_SEPARATOR)
 	$(FINALIZE)
