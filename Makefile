@@ -83,7 +83,7 @@ final: all
 	mkdir final.tmp
 	# We skip: js-source *.mk Makefile
 	cp -ra \
-		*.jpg *.png *.css air ancient_egyptians backgrounds classic dondorf font index.html jolly-royal js *.gif layouts mobile paris \
+		*.jpg *.png *.css ads.txt .htaccess air ancient_egyptians backgrounds classic dondorf font index.html jolly-royal js *.gif layouts mobile paris \
 		final.tmp
 
 	$(FINALIZE)
