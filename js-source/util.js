@@ -1,3 +1,4 @@
+export var Util;
 YUI.add("util", function (Y) {
 
 var Solitaire = Y.Solitaire;

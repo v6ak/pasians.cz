@@ -1,3 +1,4 @@
+export var SaveManager;
 YUI.add("save-manager", function (Y) {
 
 var Solitaire = Y.Solitaire;

@@ -27,7 +27,7 @@ function loadAds(selector, show) {
 		if (adAdded) {
 			console.log('will request to load ads');
 			try{
-				(adsbygoogle = window.adsbygoogle || []).push({});
+				(window.adsbygoogle = window.adsbygoogle || []).push({});
 				console.log('requested to load ads');
 			}catch(e){
 				console.exception('failed to request to load ads', e);
