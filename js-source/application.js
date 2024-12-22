@@ -1173,9 +1173,9 @@
 			this.load(Y.Solitaire.Card.base.theme + "/facedown.png");
 			this.load(Y.Solitaire.Card.base.theme + "/freeslot.png");
 
-			Y.Array.each(icons, function (image) {
+			/*Y.Array.each(icons, function (image) {
 				this.load("layouts/mini/" + image + ".png");
-			}, this);
+			}, this);*/
 
 			this.showFade = fade !== false;
 			if (this.showFade) {
