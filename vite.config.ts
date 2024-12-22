@@ -1,6 +1,7 @@
 import concat from '@vituum/vite-plugin-concat';
 
 export default {
+  base: './',
   plugins: [
     concat({
         input: [
