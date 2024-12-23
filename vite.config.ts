@@ -5,11 +5,10 @@ export default {
   plugins: [
     concat({
         input: [
-            'index.js',
+            'legacy-bundle.js',
         ],
         files: {
-            'index.js': [
-                // YUI
+            'legacy-bundle.js': [  // YUI
                 './node_modules/yui/yui/yui-min.js',
                 './node_modules/yui/oop/oop-min.js',
                 './node_modules/yui/event-custom-base/event-custom-base-min.js',
