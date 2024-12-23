@@ -520,6 +520,15 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 				}
 			},
 
+			patience: {
+				sizes: [224],
+				224: {
+					hiddenRankHeight: 15,
+					rankHeight: 62,
+					dimensions: [224, 340]
+				}
+			},
+
             air: {
 				sizes: [141],
 				141: {
