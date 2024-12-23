@@ -1,5 +1,5 @@
 
-import sachyCz from './banners/chessorg_160x600_CZ.jpg'; // ?format=avif&imagetools
+//import sachyCz from './banners/chessorg_160x600_CZ.jpg'; // ?format=avif&imagetools
 import mahjongCz from './banners/mahjong-cz-160px.jpg'; // ?format=avif&imagetools
 
 import { el, ExtendedAttrs } from './dom';
@@ -34,7 +34,7 @@ interface Banner {
 
 
 export const SIDE_BANNERS: Banner[] = [
-    {...imageBanner(sachyCz, 'https://herna.sachy.cz'), weight: 100, offline: true},
+    // {...imageBanner(sachyCz, 'https://herna.sachy.cz'), weight: 100, offline: true},
     {...imageBanner(mahjongCz, 'https://mahjong.cz'), weight: 100, offline: true},
     {...adsenseBanner({
         class: "adsbygoogle",
