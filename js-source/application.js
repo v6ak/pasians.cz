@@ -20,7 +20,7 @@
 	function styleForNoPopup(){
 		document.body.style.overflow = null;
 		document.body.style.touchAction = null;
-		document.querySelector('html').scrollTo(0, 0)
+		window.scrollTo({top: 0, behavior: 'smooth'});
 	}
 
 	var active = {
