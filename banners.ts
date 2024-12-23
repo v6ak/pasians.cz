@@ -35,7 +35,7 @@ interface Banner {
 
 export const SIDE_BANNERS: Banner[] = [
     // {...imageBanner(sachyCz, 'https://herna.sachy.cz'), weight: 100, offline: true},
-    {...imageBanner(mahjongCz, 'https://mahjong.cz'), weight: 100, offline: true},
+    {...imageBanner(mahjongCz, 'https://mahjong.cz'), weight: 1, offline: true},
     {...adsenseBanner({
         class: "adsbygoogle",
         style: "display:inline-block;width:160px;height:600px",
