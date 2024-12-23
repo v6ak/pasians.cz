@@ -471,6 +471,7 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 			try {
 				Y.JSON.parse(options, this.set.bind(this));
 			} catch (e) {
+				console.log('failed to load options', e)
 				// do nothing as we'll just use the default settings
 			}
 
