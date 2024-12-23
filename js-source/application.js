@@ -546,7 +546,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 					dimensions: [224, 299]
 				}
 			},
-
+			/*
             air: {
 				sizes: [141],
 				141: {
@@ -609,6 +609,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 					dimensions: [131, 204]
 				}
 			}
+			*/
 		},
 
 		current: null,
