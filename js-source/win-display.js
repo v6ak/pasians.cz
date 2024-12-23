@@ -291,7 +291,7 @@ YUI.add("win-display", function (Y) {
 				attachEvents();
 
 				winDisplayGame().set("text", Solitaire.Application.nameMap[gameName]);
-				winDisplayStreak().set("text", stats.streaks().last().length);
+				winDisplayStreak().set("text", stats.streaks().last()?.length);
 				winDisplayWins().set("text", stats.wins().length);
 				winDisplayLoses().set("text", stats.loses().length);
 				winDisplayNode().removeClass("hidden");
@@ -318,5 +318,8 @@ YUI.add("win-display", function (Y) {
 	winScreens.push(explodeFoundations);
 	if (window.HTMLCanvasElement) {
 		winScreens.push(windows3);
+	}
+	if (location.search.indexOf('fake-won') != -1) {
+		window.addEventListener('load', () => setTimeout(() => WinDisplay.winDisplay(), 1000))
 	}
 }, "0.0.1", {requires: ["solitaire", "statistics", "util", "array-extras", "breakout"]});
