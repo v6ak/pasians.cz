@@ -493,6 +493,15 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 
 	Themes = {
 		all: {
+			'rummy-senior': {
+				sizes: [224],
+				224: {
+					hiddenRankHeight: 17,
+					rankHeight: 80,
+					dimensions: [224, 330]
+				}
+			},
+
 			classic: {
 				sizes: [224],
 				224: {
