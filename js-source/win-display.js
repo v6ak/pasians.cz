@@ -284,7 +284,6 @@ YUI.add("win-display", function (Y) {
 
 	Y.mix(WinDisplay, {
 		winDisplay: function (delay) {
-			initGameWonAd(document.querySelector('#game-won-ad-place'));
 			winDisplayTimer = setTimeout(function () {
 				var gameName = Solitaire.game.name(),
 					stats = Statistics.getRecord(gameName);
@@ -297,6 +296,7 @@ YUI.add("win-display", function (Y) {
 				winDisplayLoses().set("text", stats.loses().length);
 				winDisplayNode().removeClass("hidden");
 				styleForPopup();
+				initGameWonAd(document.querySelector('#game-won-ad-place'));
 			}, delay);
 		},
 
