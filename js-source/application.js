@@ -538,6 +538,15 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 				}
 			},
 
+			"bridge-rummy": {
+				sizes: [224],
+				224: {
+					hiddenRankHeight: 20,
+					rankHeight: 80,
+					dimensions: [224, 299]
+				}
+			},
+
             air: {
 				sizes: [141],
 				141: {
