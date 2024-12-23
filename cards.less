@@ -949,6 +949,28 @@ a.external {
 	height: 150px;
 	opacity: 0.5;
 }
+#credits {
+	position: fixed;
+	right: 10px;
+	bottom: 45px;
+
+	opacity: 0.5;
+	color: black;
+	@shadow-blur: 4px;
+	@shadow-distance: 2px;
+	@shadow-color: white;
+
+	text-shadow:
+		@shadow-color @shadow-distance @shadow-distance @shadow-blur,
+		@shadow-color @shadow-distance -@shadow-distance @shadow-blur,
+		@shadow-color -@shadow-distance @shadow-distance @shadow-blur,
+		@shadow-color -@shadow-distance -@shadow-distance @shadow-blur;
+
+	a {
+		text-decoration: underline;
+		color: black;
+	}
+}
 
 @media (max-width: /*160px+387px+5px = */552px) {
 	#logo_felt {

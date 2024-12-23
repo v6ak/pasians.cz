@@ -1,5 +1,7 @@
 import { styleForNoPopup, styleForPopup } from "../dialogs";
 
+const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" target="_blank">Hrací Karty.cz</a>';
+
 (function () {
 	const MIN_SIDE_AD_ALWAYS_ENABLED = 768;
 	
@@ -494,6 +496,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 	Themes = {
 		all: {
 			'rummy-senior': {
+				credits: CREDITS_HRACIKARTY,
 				sizes: [224],
 				224: {
 					hiddenRankHeight: 17,
@@ -512,6 +515,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 			},
 
 			poker: {
+				credits: CREDITS_HRACIKARTY,
 				sizes: [224],
 				224: {
 					hiddenRankHeight: 30,
@@ -521,6 +525,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 			},
 
 			patience: {
+				credits: CREDITS_HRACIKARTY,
 				sizes: [224],
 				224: {
 					hiddenRankHeight: 15,
@@ -539,6 +544,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 			},
 
 			"bridge-rummy": {
+				credits: CREDITS_HRACIKARTY,
 				sizes: [224],
 				224: {
 					hiddenRankHeight: 20,
@@ -645,6 +651,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 			}
 
 			this.current = name;
+			document.querySelector('#credits').innerHTML = this.all[name].credits || '';
 
 			sizes = this.all[name].sizes;
 			this.set(sizes[sizes.length - 1]);
