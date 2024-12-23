@@ -1,3 +1,5 @@
+import { styleForNoPopup, styleForPopup } from "../dialogs";
+
 (function () {
 	const MIN_SIDE_AD_ALWAYS_ENABLED = 768;
 	

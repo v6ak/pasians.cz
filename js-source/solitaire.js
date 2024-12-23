@@ -1,3 +1,5 @@
+import { initSideAd } from "../banners";
+
 function setClass(element, className, shallBePresent) {
 	if (shallBePresent) {
 		element.classList.add(className);
@@ -1735,5 +1737,8 @@ var Undo = {
 		return [to, from];
 	}
 };
+Object.entries({
+	setClass, instance, argsArray, isTestSite, normalize, Game, Solitaire, CardDelegate
+}).forEach(([key, value]) => window[key] = value);
 }, "0.0.1", {requires: ['event-touch', 'async-queue', "save-manager", "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras", "json-parse", "json-stringify"]});
 

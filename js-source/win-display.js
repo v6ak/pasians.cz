@@ -1,3 +1,6 @@
+import { initGameWonAd } from "../banners";
+import { styleForNoPopup, styleForPopup } from "../dialogs";
+
 /*
  * Reward the player when they win
  */
