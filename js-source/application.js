@@ -11,17 +11,6 @@
 			return node;
 		};
 	}
-	
-	function styleForPopup(){
-		document.body.style.overflow = 'auto';
-		document.body.style.touchAction = 'auto';
-	}
-
-	function styleForNoPopup(){
-		document.body.style.overflow = null;
-		document.body.style.touchAction = null;
-		window.scrollTo({top: 0, behavior: 'smooth'});
-	}
 
 	var active = {
 		name: "Klondike",

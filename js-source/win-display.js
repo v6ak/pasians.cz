@@ -293,12 +293,14 @@ YUI.add("win-display", function (Y) {
 				winDisplayWins().set("text", stats.wins().length);
 				winDisplayLoses().set("text", stats.loses().length);
 				winDisplayNode().removeClass("hidden");
+				styleForPopup();
 			}, delay);
 		},
 
 		cancel: function () {
 			winDisplayNode().addClass("hidden");
 			clearTimeout(winDisplayTimer);
+			styleForNoPopup();
 		},
 
 		enable: function () {
