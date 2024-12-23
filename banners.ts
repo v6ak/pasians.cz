@@ -63,6 +63,9 @@ function onlyApplicable(banners: Banner[]) {
 }
 
 export function pickRandomBanner(banners: Banner[]): Banner|null {
+    if (banners.length == 0) {
+        return null;
+    }
     const totalWeight = onlyApplicable(banners).map(x => x.weight).reduce((x, y) => x+y);
     const randomValue = Math.random() * totalWeight;
     console.log({randomValue})
