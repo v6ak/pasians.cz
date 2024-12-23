@@ -510,6 +510,16 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 					dimensions: [224, 313]
 				}
 			},
+
+			poker: {
+				sizes: [224],
+				224: {
+					hiddenRankHeight: 30,
+					rankHeight: 78,
+					dimensions: [224, 342]
+				}
+			},
+
             air: {
 				sizes: [141],
 				141: {
