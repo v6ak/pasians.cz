@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@vituum/vite-plugin-concat": "^1.1.0",
+    "less": "^4.2.1",
     "typescript": "~5.6.2",
     "vite": "^6.0.3"
   },

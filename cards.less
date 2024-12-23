@@ -530,32 +530,33 @@ button:hover {
 .other-games {
 	display: block;
 	margin-bottom: 30px;
+	li {
+		display: inline;
+		a {
+			float: left;
+			width: 75px;
+			height: 100px;
+			margin: 10px;
+			border-radius: 5px;
+			border: 0px none;
+			background-color: #eae7d6;
+			text-decoration: none;
+			padding: 4px;
+			text-align: center;
+			font-size: 70%;
+			img {
+				max-width: 75px;
+				max-height: 75px;
+			}
+		}
+	}
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
 }
-.other-games li {
-	display: inline;
-}
-.other-games li a {
-	float: left;
-	width: 75px;
-	height: 100px;
-	margin: 10px;
-	border-radius: 5px;
-	border: 0px none;
-	background-color: #eae7d6;
-	text-decoration: none;
-	padding: 4px;
-	text-align: center;
-	font-size: 70%;
-}
-.other-games li a img {
-	max-width: 75px;
-	max-height: 75px;
-}
-.other-games::after {
-	content: "";
-	display: block;
-	clear: both;
-}
+
 #game-won-ad-place {
 	height: 250px;
 	overflow: hidden;
