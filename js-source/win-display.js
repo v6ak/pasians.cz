@@ -215,6 +215,7 @@ YUI.add("win-display", function (Y) {
 			WinDisplay.cancel();
 			setTimeout(function () {
 				Application.newGame();
+				window.location.reload();
 			}, 0);
 		}, Y.one("#win-display .new_deal"));
 
