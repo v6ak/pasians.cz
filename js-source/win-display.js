@@ -214,13 +214,13 @@ YUI.add("win-display", function (Y) {
 		var Application = Solitaire.Application,
 		    activeGame = Solitaire.game.name();
 
-		Y.on("click", function () {
+		/*Y.on("click", function () {
 			WinDisplay.cancel();
 			setTimeout(function () {
 				Application.newGame();
 				window.location.reload();
 			}, 0);
-		}, Y.one("#win-display .new_deal"));
+		}, Y.one("#win-display .new_deal"));*/
 
 		Y.on("click", function () {
 			Application.GameChooser.show(true);

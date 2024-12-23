@@ -234,6 +234,17 @@ p {
 
 #win-display {
 	z-index: 1000;
+	section {
+		margin-top: 10px;
+		@media (min-width: 380px) {
+			& {
+				float: left;
+				margin: 10px;
+				min-width: 40%;
+				box-sizing: border-box;	
+			}
+		}
+	}
 }
 
 #win-display .gratulation {
@@ -560,14 +571,6 @@ button:hover {
 	}
 }
 
-#win-display {
-	section {
-		float: left;
-		margin: 10px;
-		min-width: 40%;
-		box-sizing: border-box;
-	}
-}
 #game-won-ad-place {
 	clear: both;
 	height: 250px;
