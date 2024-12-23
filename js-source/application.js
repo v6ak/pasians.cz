@@ -1,7 +1,7 @@
 import { styleForNoPopup, styleForPopup } from "../dialogs";
 import hraciKartyCz from '../hracikarty.png';
 
-const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '"></a>';
+const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
 (function () {
 	const MIN_SIDE_AD_ALWAYS_ENABLED = 768;
