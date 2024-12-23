@@ -38,6 +38,8 @@ jobs:
         name: pasians-site
         path: dist
 
+    - run: cp cloudflare/* dist
+
     - run: mkdir staging-dist
 
     - run: cp -ra dist staging-dist/cekej
