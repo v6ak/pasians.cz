@@ -958,14 +958,19 @@ Y.Solitaire.Card = {
 				left: this.left,
 				top: this.top,
 				width: Math.floor(this.width),
-				height: Math.floor(this.height)
+				height: Math.floor(this.height),
+				borderRadius: this.borderRadius,
 			};
 		},
 
 		updateStyle: function () {
 			var n = this.node;
+			const style = this.wrapperStyle();
 
-			n && n.setStyles(this.wrapperStyle());
+			if (n) {
+				n.setStyles(style);
+				n.getDOMNode().style.borderRadius = style.borderRadius + 'px';
+			}
 			this.setRankHeight();
 		},
 

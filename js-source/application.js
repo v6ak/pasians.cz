@@ -502,7 +502,8 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 				224: {
 					hiddenRankHeight: 17,
 					rankHeight: 80,
-					dimensions: [224, 330]
+					dimensions: [224, 330],
+					borderRadius: 19,
 				}
 			},
 
@@ -511,7 +512,8 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 				224: {
 					hiddenRankHeight: 26,
 					rankHeight: 78,
-					dimensions: [224, 313]
+					dimensions: [224, 313],
+					borderRadius: 11,
 				}
 			},
 
@@ -521,7 +523,8 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 				224: {
 					hiddenRankHeight: 30,
 					rankHeight: 78,
-					dimensions: [224, 342]
+					dimensions: [224, 342],
+					borderRadius: 19,
 				}
 			},
 
@@ -531,7 +534,8 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 				224: {
 					hiddenRankHeight: 15,
 					rankHeight: 62,
-					dimensions: [224, 340]
+					dimensions: [224, 340],
+					borderRadius: 19,
 				}
 			},
 
@@ -540,8 +544,9 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 				224: {
 					hiddenRankHeight: 15,
 					rankHeight: 75,
-					dimensions: [224, 306]
-				}
+					dimensions: [224, 306],
+					borderRadius: 27,
+				},
 			},
 
 			"bridge-rummy": {
@@ -550,7 +555,8 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 				224: {
 					hiddenRankHeight: 20,
 					rankHeight: 80,
-					dimensions: [224, 299]
+					dimensions: [224, 299],
+					borderRadius: 19,
 				}
 			},
 			/*
@@ -660,13 +666,15 @@ const CREDITS_HRACIKARTY = 'Karty jsou od <a href="https://www.hracikarty.cz/" t
 
 		set: function (size) {
 			var theme = this.all[this.current][size];
+			console.log("theme.borderRadius", theme.borderRadius)
 
 			Y.mix(Y.Solitaire.Card.base, {
 				theme: this.basePath(size),
 				hiddenRankHeight: theme.hiddenRankHeight,
 				rankHeight: theme.rankHeight,
 				width: theme.dimensions[0],
-				height: theme.dimensions[1]
+				height: theme.dimensions[1],
+				borderRadius: theme.borderRadius || 0,
 			}, true);
 		}
 	},
