@@ -85,7 +85,11 @@ export function pickRandomBanner(banners: Banner[]): Banner|null {
 export function insertBanner(container: HTMLElement, collection: Banner[]) {
     const banner = pickRandomBanner(collection);
     container.append(banner?.html() || '');
-    (banner?.onInsert || (() => {}))()
+    try {
+        (banner?.onInsert || (() => {}))()
+    } catch (e) {
+        console.error("Error when initalizing banner", container, banner, e);
+    }
 }
 
 export function initSideAd() {
