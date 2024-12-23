@@ -502,7 +502,7 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 				}
 			},
 
-			classic: {
+			jirjames: {
 				sizes: [224],
 				224: {
 					hiddenRankHeight: 26,
