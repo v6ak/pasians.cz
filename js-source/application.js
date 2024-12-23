@@ -529,6 +529,15 @@ import { styleForNoPopup, styleForPopup } from "../dialogs";
 				}
 			},
 
+			nicu: {
+				sizes: [224],
+				224: {
+					hiddenRankHeight: 15,
+					rankHeight: 75,
+					dimensions: [224, 306]
+				}
+			},
+
             air: {
 				sizes: [141],
 				141: {
