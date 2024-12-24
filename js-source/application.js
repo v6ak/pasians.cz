@@ -502,7 +502,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 				sizes: [224],
 				224: {
 					hiddenRankHeight: 17,
-					rankHeight: 80,
+					rankHeight: 120,
 					dimensions: [224, 330],
 					borderRadius: 19,
 				}
@@ -544,7 +544,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 				sizes: [224],
 				224: {
 					hiddenRankHeight: 15,
-					rankHeight: 75,
+					rankHeight: 125,
 					dimensions: [224, 306],
 					borderRadius: 27,
 				},
