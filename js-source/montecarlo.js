@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("monte-carlo", function (Y) {
 
 var Solitaire = Y.Solitaire,

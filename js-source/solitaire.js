@@ -1,16 +1,5 @@
-import { initSideAd } from "../banners";
-
-function setClass(element, className, shallBePresent) {
-	if (shallBePresent) {
-		element.classList.add(className);
-	} else {
-		element.classList.remove(className);
-	}
-}
-
-function isTestSite(){
-	return !window.location.host.endsWith("pasians.cz");
-}
+import { initSideAd } from "../src/banners";
+import { argsArray, instance, setClass, normalize } from "../src/util";
 
 let adsInitialized = false;
 
@@ -19,145 +8,6 @@ function loadAds(show) {
 		initSideAd();
 		adsInitialized = true;
 	}
-}
-
-if (!Array.prototype.indexOf) {
-  Array.prototype.indexOf = function(elt /*, from*/)  {  
-    var len = this.length >>> 0;  
-  
-    var from = Number(arguments[1]) || 0;  
-    from = (from < 0)  
-         ? Math.ceil(from)  
-         : Math.floor(from);  
-    if (from < 0)  
-      from += len;  
-  
-    for (; from < len; from++) {  
-      if (from in this &&  
-          this[from] === elt)  
-        return from;  
-    }  
-    return -1;  
-  };  
-}
-
-Array.prototype.flatten = function () {
-	var result = [],
-	    i,
-	    len,
-	    item,
-	    proto = Array.prototype;
-
-	for (i = 0, len = this.length; i < len; i++) {
-		item = this[i];
-		if (Object.prototype.toString.call(item) === "[object Array]") {
-			proto.push.apply(result, proto.flatten.call(item));
-		} else {
-			result.push(item);
-		}
-	}
-	return result;
-};
-
-function argsArray(args) {
-	return Array.prototype.slice.call(args);
-}
-
-Array.prototype.last = function () {
-	return this[this.length - 1];
-};
-
-Array.prototype.deleteItem = function (item) {
-	var i = this.indexOf(item);
-
-	i !== -1 && this.splice(i, 1);
-};
-
-Array.prototype.shuffle = function () {
-	var i = this.length,
-	    r,
-	    item,
-	    temp;
-
-	while (--i) {
-		r = ~~(Math.random() * i);
-		item = this[i];
-		temp = this[r];
-		this[r] = item;
-		this[i] = temp;
-	}
-};
-
-Function.prototype.bind = function (o) {
-	var f = this;
-
-	return function () {
-		var args = argsArray(arguments);
-
-		return f.apply(o, args);
-	};
-};
-
-Function.prototype.partial = function () {
-	var f = this, captured = argsArray(arguments);
-
-	return function () {
-		var i, len, args = [].concat(captured);
-
-		for (i = 0, len = arguments.length; i < len; i++) {
-			args.push(arguments[i]);
-		}
-
-		return f.apply(this, args);
-	};
-};
-
-function instance(proto, attrs) {
-	var maker = new Function(),
-	    o,
-	    p;
-
-	maker.prototype = proto;
-	o = new maker;
-	if (typeof attrs === "object") {
-		for (p in attrs) {
-			if (attrs.hasOwnProperty(p)) {
-				o[p] = attrs[p];
-			}
-		}
-	}
-
-	return o;
-}
-
-function normalize(valOrFunction) {
-	var val = typeof valOrFunction === "function" ? valOrFunction() : valOrFunction;
-
-	return isNaN(val) ? undefined : val;
-}
-
-Object.prototype.mapToFloat = function () {
-	var p;
-
-	for (p in this) {
-		if (this.hasOwnProperty(p)) {
-			this[p] = parseFloat(this[p]);
-		}
-	}
-
-	return this;
-}
-
-Object.prototype.mapAppend = function (str) {
-	var p;
-
-	for (p in this) {
-		if (this.hasOwnProperty(p)) {
-			this[p] += str;
-		}
-	}
-
-	return this;
 }
 
 var Game;
@@ -1744,7 +1594,7 @@ var Undo = {
 	}
 };
 Object.entries({
-	setClass, instance, argsArray, isTestSite, normalize, Game, Solitaire, CardDelegate
+	Game, Solitaire, CardDelegate
 }).forEach(([key, value]) => window[key] = value);
 }, "0.0.1", {requires: ['event-touch', 'async-queue', "save-manager", "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras", "json-parse", "json-stringify"]});
 

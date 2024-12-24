@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("russian-solitaire", function (Y) {
 
   var Solitaire = Y.Solitaire,

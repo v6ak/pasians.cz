@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("agnes", function (Y) {
 	function inSeries(first, second) {
 		return (first + 1) % 13 === second % 13;

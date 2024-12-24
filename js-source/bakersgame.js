@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("bakersgame", function (Y) {
 	var BakersGame = Y.Solitaire.BakersGame = instance(Y.Solitaire.Freecell, {
 		Card: instance(Y.Solitaire.Freecell.Card, {

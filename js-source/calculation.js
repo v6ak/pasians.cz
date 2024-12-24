@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("calculation", function (Y) {
 
 function wrap(array, index) {

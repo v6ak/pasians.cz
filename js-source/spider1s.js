@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("spider1s", function (Y) {
 	var Spider = Y.Solitaire.Spider1S = instance(Y.Solitaire.Spider);
 

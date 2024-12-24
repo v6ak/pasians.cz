@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("golf", function (Y) {
 	var Solitaire = Y.Solitaire,
 	Golf = Y.Solitaire.Golf = instance(Solitaire, {

@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("pyramid", function (Y) {
 
 var Solitaire = Y.Solitaire,

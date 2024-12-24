@@ -1,3 +1,5 @@
+import { instance } from "../src/util";
+
 YUI.add("spider", function (Y) {
 
 var availableMoves = 0,

@@ -1,3 +1,5 @@
+import { instance, normalize } from "../src/util";
+
 YUI.add("grandfathers-clock", function (Y) {
 
 function wrap(array, index) {

@@ -1,5 +1,5 @@
-import { initGameWonAd } from "../banners";
-import { styleForNoPopup, styleForPopup } from "../dialogs";
+import { initGameWonAd } from "../src/banners";
+import { styleForNoPopup, styleForPopup } from "../src/dialogs";
 
 /*
  * Reward the player when they win

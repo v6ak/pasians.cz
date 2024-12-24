@@ -1,5 +1,6 @@
-import { styleForNoPopup, styleForPopup } from "../dialogs";
+import { styleForNoPopup, styleForPopup } from "../src/dialogs";
 import hraciKartyCz from '../hracikarty.png';
+import { setClass, normalize } from "../src/util";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 

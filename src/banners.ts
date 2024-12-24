@@ -1,6 +1,6 @@
 
-//import sachyCz from './banners/chessorg_160x600_CZ.jpg'; // ?format=avif&imagetools
-import mahjongCz from './banners/mahjong-cz-160px.jpg'; // ?format=avif&imagetools
+//import sachyCz from '../banners/chessorg_160x600_CZ.jpg'; // ?format=avif&imagetools
+import mahjongCz from '../banners/mahjong-cz-160px.jpg'; // ?format=avif&imagetools
 
 import { el, ExtendedAttrs } from './dom';
 
