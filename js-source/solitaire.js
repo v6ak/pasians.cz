@@ -357,7 +357,7 @@ Y.mix(Solitaire, {
 	},
 
 	setup: function (callback) {
-		Game = Solitaire.game = this;
+		window.Game = Game = Solitaire.game = this;
 
 		Y.fire("beforeSetup");
 
