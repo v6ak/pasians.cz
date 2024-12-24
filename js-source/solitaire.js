@@ -166,6 +166,7 @@ var Game;
 YUI().add("solitaire", function (Y) {
 
 var Solitaire = Y.namespace("Solitaire");
+window.Solitaire = Solitaire;
 
 function CardDelegate(cfg) {
 	CardDelegate.superclass.constructor.call(this, cfg);
