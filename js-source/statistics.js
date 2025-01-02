@@ -1,3 +1,5 @@
+import { SolitaireUtil } from "./util";
+
 /*
  * record win/lose records, streaks, etc
  */
@@ -9,7 +11,7 @@ YUI.add("statistics", function (Y) {
 	    Solitaire = Y.Solitaire,
 	    Statistics = Y.namespace("Solitaire.Statistics"),
 	    isAttached = false,
-	    cacheNode = Solitaire.Util.cacheNode,
+	    cacheNode = SolitaireUtil.cacheNode,
 	    selectedGame,
 
 	    populateGamesList = (function () {
@@ -251,4 +253,4 @@ YUI.add("statistics", function (Y) {
 		}
 	});
 
-}, "0.0.1", {requires: ["solitaire", "util", "array-extras", "breakout"]});
+}, "0.0.1", {requires: ["solitaire", "array-extras", "breakout"]});

@@ -1,10 +1,11 @@
 import { instance } from "../src/util";
+import { SolitaireUtil } from "./util";
 
 YUI.add("spider", function (Y) {
 
 var availableMoves = 0,
     Solitaire = Y.Solitaire,
-    Util = Solitaire.Util,
+    Util = SolitaireUtil,
     Spider = Solitaire.Spider = instance(Solitaire, {
 	fields: ["Foundation", "Deck", "Tableau"],
 
@@ -187,4 +188,4 @@ Y.mix(Spider.Tableau.Stack, {
 		card.top = top;
 	}
 }, true);
-}, "0.0.1", {requires: ["auto-stack-clear", "util"]});
+}, "0.0.1", {requires: ["auto-stack-clear"]});

@@ -1,5 +1,6 @@
 import { initGameWonAd } from "../src/banners";
 import { styleForNoPopup, styleForPopup } from "../src/dialogs";
+import { SolitaireUtil } from "./util";
 
 /*
  * Reward the player when they win
@@ -13,7 +14,7 @@ YUI.add("win-display", function (Y) {
 	    WinDisplay = Y.namespace("Solitaire.WinDisplay"),
 	    winDisplayTimer,
 	    isAttached = false,
-	    cacheNode = Solitaire.Util.cacheNode,
+	    cacheNode = SolitaireUtil.cacheNode,
 	    
 	    winScreens = [],
 
@@ -322,4 +323,4 @@ YUI.add("win-display", function (Y) {
 	if (location.search.indexOf('fake-won') != -1) {
 		window.addEventListener('load', () => setTimeout(() => WinDisplay.winDisplay(), 1000))
 	}
-}, "0.0.1", {requires: ["solitaire", "statistics", "util", "array-extras", "breakout"]});
+}, "0.0.1", {requires: ["solitaire", "statistics", "array-extras", "breakout"]});

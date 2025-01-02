@@ -147,4 +147,4 @@ Y.mix(Bisley.Deck.Stack, {
 }, true);
 
 
-}, "0.0.1", {requires: ["solitaire", "util"]});
+}, "0.0.1", {requires: ["solitaire"]});

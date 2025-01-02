@@ -68,7 +68,6 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 		"json-parse",
 		"json-stringify",
 		"tabview",
-		"util",
 		"auto-turnover",
 	        "statistics",
 		"win-display",

@@ -1,9 +1,11 @@
+import { SolitaireUtil } from "./util";
+
 /*
  * Display the foundation seed rank
  */
 YUI.add("display-seed-value", function (Y) {
 	var Solitaire = Y.Solitaire,
-	    Util = Solitaire.Util,
+	    Util = SolitaireUtil,
 	    supportedGames = ["Agnes", "Canfield"],
 	    rankContainer = Util.cacheNode("#seed-value-bar"),
 	    rankNode = Util.cacheNode("#seed-value");
@@ -27,4 +29,4 @@ YUI.add("display-seed-value", function (Y) {
 		}
 	});
 
-}, "0.0.1", {requires: ["solitaire", "util"]});
+}, "0.0.1", {requires: ["solitaire"]});

@@ -10,7 +10,7 @@ function loadAds(show) {
 	}
 }
 
-var Game;
+export var Game;
 
 
 YUI().add("solitaire", function (Y) {

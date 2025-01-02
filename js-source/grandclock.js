@@ -1,4 +1,5 @@
 import { instance, normalize } from "../src/util";
+import { SolitaireUtil } from "./util";
 
 YUI.add("grandfathers-clock", function (Y) {
 
@@ -66,7 +67,7 @@ var Solitaire = Y.Solitaire,
 			clock[i].flipPostMove(Solitaire.Animation.interval);
 		}
 
-		Solitaire.Util.flipStacks(last);
+		SolitaireUtil.flipStacks(last);
 	},
 
 	height: function () { return this.Card.base.height * 5.75; },
@@ -199,4 +200,4 @@ Y.mix(GClock.Foundation.Stack, {
 	}
 }, true);
 
-}, "0.0.1", {requires: ["solitaire", "util"]});
+}, "0.0.1", {requires: ["solitaire"]});

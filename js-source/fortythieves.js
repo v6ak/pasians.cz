@@ -1,4 +1,5 @@
 import { instance } from "../src/util";
+import { SolitaireUtil } from "./util";
 
 YUI.add("forty-thieves", function (Y) {
 
@@ -21,7 +22,7 @@ var Solitaire = Y.Solitaire,
 			}
 		}
 
-		Solitaire.Util.flipStacks(card);
+		SolitaireUtil.flipStacks(card);
 		deck.createStack();
 	},
 
@@ -162,4 +163,4 @@ Y.mix(FortyThieves.Deck.Stack, {
 }, true);
 
 
-}, "0.0.1", {requires: ["solitaire", "util"]});
+}, "0.0.1", {requires: ["solitaire"]});
