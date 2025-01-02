@@ -372,11 +372,11 @@ YUI.add("solitaire-ios", function (Y) {
 	};
 
 	Solitaire.scale = Solitaire.noop;
-	Solitaire.Card.ghost = false;
+	Card.ghost = false;
 	Solitaire.Animation.animate = false;
 
 	/*
-	Solitaire.Card.base = {
+	Card.base = {
 		theme: "mobile",
 		hiddenRankHeight: 3,
 		rankHeight: 15,

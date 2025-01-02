@@ -1,3 +1,4 @@
+import { Card } from "../src/card";
 import { instance } from "../src/util";
 
 YUI.add("calculation", function (Y) {
@@ -98,7 +99,7 @@ var Solitaire = Y.Solitaire,
 			layout: {
 				hspacing: 1.25,
 				top: 0,
-				left: function () { return Solitaire.Card.width * 3.75; }
+				left: function () { return Card.width * 3.75; }
 			}
 		},
 		field: "foundation"
@@ -109,8 +110,8 @@ var Solitaire = Y.Solitaire,
 			total: 4,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Solitaire.Card.height * 1.25; },
-				left: function () { return Solitaire.Card.width * 3.75; }
+				top: function () { return Card.height * 1.25; },
+				left: function () { return Card.width * 3.75; }
 			}
 		},
 		field: "tableau"
@@ -134,13 +135,13 @@ var Solitaire = Y.Solitaire,
 			layout: {
 				hspacing: 0,
 				top: 0,
-				left: function () { return Solitaire.Card.width * 1.25; }
+				left: function () { return Card.width * 1.25; }
 			}
 		},
 		field: "waste",
 	},
 
-	Card: instance(Solitaire.Card, {
+	Card: instance(Card, {
 		playable: function () {
 			switch (this.stack.field) {
 			case "waste":
