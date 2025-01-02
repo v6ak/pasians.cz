@@ -1,6 +1,7 @@
 import { styleForNoPopup, styleForPopup } from "../src/dialogs";
 import hraciKartyCz from '../hracikarty.png';
 import { setClass, normalize } from "../src/util";
+import { yui } from "../src/yui-modules-interop";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
@@ -25,7 +26,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 	    /* remove {fetchCSS: false, bootstrap: false} during development when additional YUI modules are needed
 	     * TODO: generate this in the build script
 	     */
-	    yui = YUI({fetchCSS: false, bootstrap: false}), Y,
+	    Y,
 	    body = cacheNode("body"),
 	    games = {
 		//"accordion": "Accordion",
