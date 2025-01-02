@@ -33,38 +33,39 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 	    games = {
 		//"accordion": "Accordion",
 	    //    "acesup": "AcesUp",
-		"agnes": "Agnes",
-		"alternations": "Alternations",
+		//"agnes": "Agnes",
+		//"alternations": "Alternations",
 		//"bakersdozen": "BakersDozen",
-		"bakersgame": "BakersGame",
+		//"bakersgame": "BakersGame",
 		//"baroness": "Baroness",
-		"bisley": "Bisley",
+		//"bisley": "Bisley",
 		//"doubleklondike": "DoubleKlondike",
-		"calculation": "Calculation",
+		//"calculation": "Calculation",
 		//"canfield": "Canfield",
-		"eightoff": "Eightoff",
-		"king-albert": "KingAlbert",
+		//"eightoff": "Eightoff",
+		//"king-albert": "KingAlbert",
 		"klondike": "Klondike",
 		"klondike1t": "Klondike1T",
 		//"thefan": "TheFan",
-		"flower-garden": "FlowerGarden",
-		"forty-thieves": "FortyThieves",
+		//"flower-garden": "FlowerGarden",
+		//"forty-thieves": "FortyThieves",
 		"freecell": "Freecell",
-		"golf": "Golf",
-		"grandfathers-clock": "GClock",
+		//"golf": "Golf",
+		//"grandfathers-clock": "GClock",
 		//"labellelucie": "LaBelleLucie",
-		"monte-carlo": "MonteCarlo",
-		"pyramid": "Pyramid",
-		"russian-solitaire": "RussianSolitaire",
-		"simple-simon": "SimpleSimon",
+		//"monte-carlo": "MonteCarlo",
+		//"pyramid": "Pyramid",
+		//"russian-solitaire": "RussianSolitaire",
+		//"simple-simon": "SimpleSimon",
 		//"scorpion": "Scorpion",
 		"spider": "Spider",
 		"spider1s": "Spider1S",
 		"spider2s": "Spider2S",
-                "spiderette": "Spiderette",
-		"tri-towers": "TriTowers",
-		"will-o-the-wisp": "WillOTheWisp",
-		"yukon": "Yukon"},
+        //        "spiderette": "Spiderette",
+		//"tri-towers": "TriTowers",
+		//"will-o-the-wisp": "WillOTheWisp",
+		//"yukon": "Yukon"
+		},
 
 	    extensions = [
 		"json",
@@ -74,9 +75,10 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 		"auto-turnover",
 	        "statistics",
 		"win-display",
-		"solver-freecell",
+		//"solver-freecell",
 		"solitaire-autoplay",
-		"display-seed-value",
+	        // "solitaire-ios",
+		//"display-seed-value",
 		"analytics"],
 
 	nameMap = {
@@ -437,6 +439,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 				}
 			},
 
+			/*
 			enableSolver: {
 				set: function (value) {
 					var solver = Y.Solitaire.Solver.Freecell;
@@ -448,6 +451,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 					return Y.Solitaire.Solver.Freecell.isEnabled();
 				}
 			},
+			*/
 
 			background: {
 				set: function (value) {
@@ -1209,15 +1213,15 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 				     "klondike1t",
 				     "klondike",
 				     "montecarlo",
-				     "pyramid",
+				     //"pyramid",
 				     //"scorpion",
 				     "spider1s",
 				     "spider2s",
-				     "spiderette",
+				     //"spiderette",
 				     "spider",
-				     "tritowers",
-				     "will-o-the-wisp",
-				     "yukon"
+				     //"tritowers",
+				     //"will-o-the-wisp",
+				     //"yukon"
 				];
 
 			Y.Array.each(["s", "h", "c", "d"], function (suit) {
