@@ -1,4 +1,3 @@
-import { Card } from "../src/card";
 import { instance } from "../src/util";
 
 YUI.add("eightoff", function (Y) {
@@ -56,7 +55,7 @@ var Solitaire = Y.Solitaire,
 			layout: {
 				vspacing: 1.25,
 				top: 0,
-				left: function () { return Card.width * 10.5; }
+				left: function () { return Solitaire.Card.width * 10.5; }
 			}
 		},
 		field: "foundation",
@@ -81,7 +80,7 @@ var Solitaire = Y.Solitaire,
 			total: 8,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Card.height * 1.25; },
+				top: function () { return Solitaire.Card.height * 1.25; },
 				left: 0
 			}
 		},

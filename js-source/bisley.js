@@ -1,4 +1,3 @@
-import { Card } from "../src/card";
 import { instance } from "../src/util";
 
 YUI.add("bisley", function (Y) {
@@ -55,8 +54,8 @@ var Solitaire = Y.Solitaire,
 			total: 8,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Card.height * 1.25; },
-				left: function () { return Card.width * 5.75; }
+				top: function () { return Solitaire.Card.height * 1.25; },
+				left: function () { return Solitaire.Card.width * 5.75; }
 			}
 		},
 		field: "foundation"
@@ -67,14 +66,14 @@ var Solitaire = Y.Solitaire,
 			total: 13,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Card.height * 2.75; },
+				top: function () { return Solitaire.Card.height * 2.75; },
 				left: 0
 			}
 		},
 		field: "tableau"
 	},
 
-	Card: instance(Card, {
+	Card: instance(Solitaire.Card, {
 		validTarget: function (stack) {
 			var target = stack.last();
 

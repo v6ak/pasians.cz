@@ -1,4 +1,3 @@
-import { Card } from "../src/card";
 import { instance } from "../src/util";
 import { SolitaireUtil } from "./util";
 
@@ -82,7 +81,7 @@ var availableMoves = 0,
 			layout: {
 				hspacing: 1.25,
 				top: 0,
-				left: function () { return Card.width * 2.5; }
+				left: function () { return Solitaire.Card.width * 2.5; }
 			}
 		},
 		field: "foundation",
@@ -108,14 +107,14 @@ var availableMoves = 0,
 			total: 10,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Card.height * 1.5; },
+				top: function () { return Solitaire.Card.height * 1.5; },
 				left: 0
 			}
 		},
 		field: "tableau",
 	},
 
-	Card: instance(Card, {
+	Card: instance(Solitaire.Card, {
 		playable: function () {
 			switch (this.stack.field) {
 			case "tableau":
@@ -130,7 +129,7 @@ var availableMoves = 0,
 		createProxyStack: function () {
 			availableMoves = Util.freeTableaus().length;
 
-			return Card.createProxyStack.call(this);
+			return Solitaire.Card.createProxyStack.call(this);
 		},
 
 		validTarget: function (stack) {
