@@ -1,3 +1,4 @@
+import { Card } from "../src/card";
 import { instance } from "../src/util";
 
 YUI.add("freecell", function (Y) {
@@ -54,7 +55,7 @@ var Solitaire = Y.Solitaire,
 			layout: {
 				hspacing: 1.25,
 				top: 0,
-				left: function () { return Solitaire.Card.width * 6; }
+				left: function () { return Card.width * 6; }
 			}
 		},
 		field: "foundation",
@@ -79,7 +80,7 @@ var Solitaire = Y.Solitaire,
 			total: 8,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Solitaire.Card.height * 1.5; },
+				top: function () { return Card.height * 1.5; },
 				left: 0
 			}
 		},
@@ -87,7 +88,7 @@ var Solitaire = Y.Solitaire,
 		draggable: true
 	},
 
-	Card: instance(Solitaire.Card, {
+	Card: instance(Card, {
 		playable: function () {
 			switch (this.stack.field) {
 			case "reserve":
@@ -100,7 +101,7 @@ var Solitaire = Y.Solitaire,
 		},
 
 		createProxyStack: function () {
-			var stack = Solitaire.Card.createProxyStack.call(this);
+			var stack = Card.createProxyStack.call(this);
 
 			this.proxyStack = stack && stack.cards.length <= Solitaire.game.openSlots(stack) ? stack : null;
 			return this.proxyStack;

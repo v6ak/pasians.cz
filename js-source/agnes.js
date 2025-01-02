@@ -1,3 +1,4 @@
+import { Card } from "../src/card";
 import { instance } from "../src/util";
 import { SolitaireUtil } from "./util";
 
@@ -83,7 +84,7 @@ YUI.add("agnes", function (Y) {
 				setCardPosition: function (card) {
 					var last = this.last(),
 					    top = this.top,
-					    left = last ? last.left + Solitaire.Card.width * 1.5 : this.left;
+					    left = last ? last.left + Card.width * 1.5 : this.left;
 
 					card.top = top;
 					card.left = left;
@@ -98,7 +99,7 @@ YUI.add("agnes", function (Y) {
 				layout: {
 					hspacing: 1.25,
 					left: 0,
-					top: function () { return Solitaire.Card.height * 4.4; }
+					top: function () { return Card.height * 4.4; }
 				}
 			},
 
