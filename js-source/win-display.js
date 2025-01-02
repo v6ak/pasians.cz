@@ -322,6 +322,6 @@ YUI.add("win-display", function (Y) {
 		winScreens.push(windows3);
 	}
 	if (location.search.indexOf('fake-won') != -1) {
-		window.addEventListener('load', () => setTimeout(() => WinDisplay.winDisplay(), 1000))
+		window.addEventListener('load', () => setTimeout(() => explodeFoundations(), 1000))
 	}
 }, "0.0.1", {requires: ["solitaire", "statistics", "array-extras"]});
