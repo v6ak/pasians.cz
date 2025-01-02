@@ -1,4 +1,3 @@
-import { Card } from "../src/card";
 import { instance } from "../src/util";
 import { SolitaireUtil } from "./util";
 
@@ -81,7 +80,7 @@ var Solitaire = Y.Solitaire,
 			layout: {
 				hspacing: 1.25,
 				top: 0,
-				left: function () { return Card.width * 3.75; }
+				left: function () { return Solitaire.Card.width * 3.75; }
 			}
 		},
 		field: "foundation",
@@ -105,7 +104,7 @@ var Solitaire = Y.Solitaire,
 			layout: {
 				hspacing: 0,
 				top: 0,
-				left: function () { return Card.width * 1.5; }
+				left: function () { return Solitaire.Card.width * 1.5; }
 			}
 		},
 		field: "waste",
@@ -116,14 +115,14 @@ var Solitaire = Y.Solitaire,
 			total: 7,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Card.height * 1.5; },
+				top: function () { return Solitaire.Card.height * 1.5; },
 				left: 0
 			}
 		},
 		field: "tableau",
 	},
 
-	Card: instance(Card, {
+	Card: instance(Solitaire.Card, {
 		playable: function () {
 
 			switch (this.stack.field) {

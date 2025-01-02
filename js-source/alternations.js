@@ -1,4 +1,3 @@
-import { Card } from "../src/card";
 import { instance } from "../src/util";
 
 YUI.add("alternations", function (Y) {
@@ -88,7 +87,7 @@ var Solitaire = Y.Solitaire,
 		stackConfig: {
 			total: 1,
 			layout: {
-				top: function () { return Card.height * 1.5 },
+				top: function () { return Y.Solitaire.Card.height * 1.5 },
 				left: 0
 			}
 		},
@@ -100,7 +99,7 @@ var Solitaire = Y.Solitaire,
 		stackConfig: {
 			total: 1,
 			layout: {
-				top: function () { return Card.height * 2.75 },
+				top: function () { return Y.Solitaire.Card.height * 2.75 },
 				left: 0
 			}
 		},
@@ -112,8 +111,8 @@ var Solitaire = Y.Solitaire,
 			total: 7,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Card.height * 1.5 },
-				left: function () { return Card.width * 2.3; }
+				top: function () { return Y.Solitaire.Card.height * 1.5 },
+				left: function () { return Y.Solitaire.Card.width * 2.3; }
 			}
 		},
 		field: "tableau"
@@ -131,7 +130,7 @@ var Solitaire = Y.Solitaire,
 		field: "foundation"
 	},
 
-	Card: instance(Card, {
+	Card: instance(Solitaire.Card, {
 		playable: function () {
 			switch (this.stack.field) {
 			case "deck":

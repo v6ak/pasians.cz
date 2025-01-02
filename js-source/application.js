@@ -3,7 +3,6 @@ import hraciKartyCz from '../hracikarty.png';
 import { setClass, normalize } from "../src/util";
 import { yui } from "../src/yui-modules-interop";
 import { SolitaireUtil } from "./util";
-import { Card } from "../src/card";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
@@ -654,7 +653,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 
 		load: function (name) {
 			var Solitaire = Y.Solitaire,
-			    base = Card.base,
+			    base = Solitaire.Card.base,
 			    sizes;
 
 			if (!(name in this.all)) {
@@ -672,7 +671,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 			var theme = this.all[this.current][size];
 			console.log("theme.borderRadius", theme.borderRadius)
 
-			Y.mix(Card.base, {
+			Y.mix(Y.Solitaire.Card.base, {
 				theme: this.basePath(size),
 				hiddenRankHeight: theme.hiddenRankHeight,
 				rankHeight: theme.rankHeight,
@@ -1224,12 +1223,12 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 
 			Y.Array.each(["s", "h", "c", "d"], function (suit) {
 				for (rank = 1; rank <= 13; rank++) {
-					this.load(Card.base.theme + "/" + suit + rank + ".png");
+					this.load(Y.Solitaire.Card.base.theme + "/" + suit + rank + ".png");
 				}
 			}, this);
 
-			this.load(Card.base.theme + "/facedown.png");
-			this.load(Card.base.theme + "/freeslot.png");
+			this.load(Y.Solitaire.Card.base.theme + "/facedown.png");
+			this.load(Y.Solitaire.Card.base.theme + "/freeslot.png");
 
 			/*Y.Array.each(icons, function (image) {
 				this.load("layouts/mini/" + image + ".png");
