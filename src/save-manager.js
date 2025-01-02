@@ -1,10 +1,8 @@
-export var SaveManager;
-YUI.add("save-manager", function (Y) {
+import { use } from "../src/yui-modules-interop";
 
-var Solitaire = Y.Solitaire;
-	SaveManager = Y.namespace("Solitaire.SaveManager");
-    
-Y.mix(SaveManager, {
+const Y = use('cookie');
+
+export const SaveManager = {
 	nameKey: "current-game",
 	serializedKey: "saved-game",
 
@@ -47,5 +45,4 @@ Y.mix(SaveManager, {
 		Y.Cookie.remove("saved-game");
 		Y.Cookie.remove("initial-game");
 	}
-});
-}, "0.0.1", {requires: ["solitaire", 'cookie']});
+};

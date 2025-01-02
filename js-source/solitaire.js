@@ -1,6 +1,7 @@
 import { initSideAd } from "../src/banners";
 import { argsArray, instance, setClass, normalize } from "../src/util";
 import { CardDelegate } from '../src/card-delegate';
+import { SaveManager } from "../src/save-manager";
 
 let adsInitialized = false;
 
@@ -162,7 +163,7 @@ Y.mix(Solitaire, {
 			key = "initial-game";
 		}
 
-		Y.Solitaire.SaveManager.save(this.name(), this.serialize(), key);
+		SaveManager.save(this.name(), this.serialize(), key);
 	},
 
 	loadGame: function (data) {
@@ -178,7 +179,7 @@ Y.mix(Solitaire, {
 	},
 
 	newGame: function () {
-		Y.Solitaire.SaveManager.clear();
+		SaveManager.clear();
 		this.withoutFlip(function () {
 			this.setup(this.deal);
 		});
@@ -474,7 +475,7 @@ Y.mix(Solitaire, {
 
 	win: function () {
 		Y.fire("win");
-		Y.Solitaire.SaveManager.save(this.name());
+		SaveManager.save(this.name());
 	},
 
 	endTurn: function () {
@@ -1587,5 +1588,5 @@ var Undo = {
 Object.entries({
 	Game, Solitaire, CardDelegate
 }).forEach(([key, value]) => window[key] = value);
-}, "0.0.1", {requires: ['event-touch', 'async-queue', "save-manager", "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras", "json-parse", "json-stringify"]});
+}, "0.0.1", {requires: ['event-touch', 'async-queue', "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras", "json-parse", "json-stringify"]});
 

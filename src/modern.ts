@@ -4,7 +4,6 @@ import '../js-source/extend-array.js';
 import '../js-source/extend-function.js';
 import '../js-source/extend-object.js';
 
-import '../js-source/save-manager.js';
 import '../js-source/analytics.js';
 import '../js-source/ads.js';
 import '../js-source/solitaire.js';

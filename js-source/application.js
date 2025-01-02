@@ -3,6 +3,7 @@ import hraciKartyCz from '../hracikarty.png';
 import { setClass, normalize } from "../src/util";
 import { yui } from "../src/yui-modules-interop";
 import { SolitaireUtil } from "./util";
+import { SaveManager } from "../src/save-manager";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
@@ -77,7 +78,6 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 		"solitaire-autoplay",
 	        "solitaire-ios",
 		"display-seed-value",
-		"save-manager",
 		"analytics"],
 
 	nameMap = {
@@ -1071,7 +1071,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 	}
 	
 	function load() {
-		var save = Y.Solitaire.SaveManager.getSavedGame();
+		var save = SaveManager.getSavedGame();
 
 		if (save.name !== "") {
 			active.name = save.name;
@@ -1117,7 +1117,7 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 	}
 
 	function restart() {
-		var save = Y.Solitaire.SaveManager.getSavedGame("initial-game"),
+		var save = SaveManager.getSavedGame("initial-game"),
 		    game = active.game;
 
 		clearDOM();
