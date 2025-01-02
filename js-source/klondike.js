@@ -1,4 +1,5 @@
 import { instance } from "../src/util";
+import { SolitaireUtil } from "./util";
 
 YUI.add("klondike", function (Y) {
 
@@ -69,7 +70,7 @@ var Solitaire = Y.Solitaire,
 		});
 	},
 
-	redeal: Solitaire.Util.moveWasteToDeck,
+	redeal: SolitaireUtil.moveWasteToDeck,
 
 	Stack: instance(Solitaire.Stack),
 
@@ -230,4 +231,4 @@ Y.mix(Klondike.Deck.Stack, {
 }, true);
 
 
-}, "0.0.1", {requires: ["util"]});
+}, "0.0.1", {requires: []});

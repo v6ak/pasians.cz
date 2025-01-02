@@ -1,10 +1,9 @@
-export var Util;
-YUI.add("util", function (Y) {
+import { use } from "../src/yui-modules-interop";
 
-var Solitaire = Y.Solitaire;
-    Util = Y.namespace("Solitaire.Util");
-    
-Y.mix(Util, {
+const Y = use('solitaire', 'array-extras')
+const Solitaire = Y.Solitaire;
+
+export var SolitaireUtil = {
 	flipStacks: function (afterCard, delay, interval) {
 		var game = Solitaire.game;
 
@@ -76,5 +75,4 @@ Y.mix(Util, {
 
 		return mappedRank ? mappedRank : rank;
 	}
-});
-}, "0.0.1", {requires: ["solitaire", "array-extras"]});
+};
