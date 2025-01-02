@@ -253,4 +253,4 @@ YUI.add("statistics", function (Y) {
 		}
 	});
 
-}, "0.0.1", {requires: ["solitaire", "array-extras", "breakout"]});
+}, "0.0.1", {requires: ["solitaire", "array-extras"]});

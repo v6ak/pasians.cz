@@ -1,4 +1,7 @@
-YUI.add("breakout", function (Y) {
+import { use } from "./yui-modules-interop";
+
+	const Y = use("plugin", "anim");
+
 	function clamp (value, min, max) {
 		return Math.max(Math.min(value, max), min);
 	}
@@ -15,7 +18,7 @@ YUI.add("breakout", function (Y) {
 	 * @type Integer
 	 */
 
-	function Breakout(config) {
+	export function Breakout(config) {
 		var rows = config.rows,
 		    columns = config.columns;
 
@@ -415,6 +418,3 @@ YUI.add("breakout", function (Y) {
 			this._inverse(this.disintegrate, options);
 		}
 	});
-
-	Y.Breakout = Breakout;
-}, "1.0", {requires: ["plugin", "anim"]});

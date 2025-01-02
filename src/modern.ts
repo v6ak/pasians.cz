@@ -41,5 +41,4 @@ import '../js-source/bakersgame.js';
 import '../js-source/calculation.js';
 import '../js-source/bisley.js';
 import '../js-source/kingalbert.js';
-import '../js-source/yui-breakout.js';
 import '../js-source/application.js';
