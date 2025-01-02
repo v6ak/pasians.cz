@@ -5,10 +5,8 @@ import '../js-source/extend-function.js';
 import '../js-source/extend-object.js';
 
 import '../js-source/analytics.js';
-import '../js-source/ads.js';
 import '../js-source/solitaire.js';
 import '../js-source/win-display.js';
-import '../js-source/iphone.js';
 import '../js-source/auto-stack-clear.js';
 import '../js-source/auto-turnover.js';
 import '../js-source/autoplay.js';

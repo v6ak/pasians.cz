@@ -76,7 +76,6 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 		"win-display",
 		"solver-freecell",
 		"solitaire-autoplay",
-	        "solitaire-ios",
 		"display-seed-value",
 		"analytics"],
 
