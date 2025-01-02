@@ -214,7 +214,7 @@ YUI.add("breakout", function (Y) {
 					to = {left: column * this._blockWidth, top: row * this._blockHeight};
 				}
 				
-				anim = new Y.Anim({
+				const anim = new Y.Anim({
 					node: node,
 					easing: easing,
 					to: to,
