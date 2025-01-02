@@ -1,5 +1,6 @@
 import { initSideAd } from "../src/banners";
 import { argsArray, instance, setClass, normalize } from "../src/util";
+import { CardDelegate } from '../src/card-delegate';
 
 let adsInitialized = false;
 
@@ -17,16 +18,6 @@ YUI().add("solitaire", function (Y) {
 
 var Solitaire = Y.namespace("Solitaire");
 window.Solitaire = Solitaire;
-
-function CardDelegate(cfg) {
-	CardDelegate.superclass.constructor.call(this, cfg);
-}
-
-Y.extend(CardDelegate, Y.DD.Delegate, {
-	getCard: function () {
-		return this.get("currentNode").getData("target");
-	}
-});
 
 Y.mix(Solitaire, {
 	activeCard: null,
