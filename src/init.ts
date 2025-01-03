@@ -9,6 +9,5 @@ import '../src-yui-legacy-modules/solitaire.js';
 import '../src-yui-legacy-modules/win-display.js';
 import '../src/auto-turnover';    // we want the side effect
 import '../src-yui-legacy-modules/autoplay.js';
-import '../src-yui-legacy-modules/ie-opera-background-fix.js';
 import '../src-yui-legacy-modules/statistics.js';
 import '../src-yui-legacy-modules/application.js';
