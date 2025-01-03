@@ -1,6 +1,6 @@
 import { initGameWonAd } from "../src/banners";
 import { styleForNoPopup, styleForPopup } from "../src/dialogs";
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil } from "../src/solitaire-util";
 import { Breakout } from "../src/yui-breakout";
 
 /*

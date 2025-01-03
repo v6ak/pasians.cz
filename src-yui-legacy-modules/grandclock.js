@@ -1,5 +1,5 @@
 import { instance, normalize } from "../src/util";
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil } from "../src/solitaire-util";
 
 YUI.add("grandfathers-clock", function (Y) {
 

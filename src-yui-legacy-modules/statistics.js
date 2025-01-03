@@ -1,4 +1,4 @@
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil } from "../src/solitaire-util";
 
 /*
  * record win/lose records, streaks, etc

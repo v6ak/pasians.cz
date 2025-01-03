@@ -1,10 +1,9 @@
 import { instance } from "../src/util";
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil as Util } from "../src/solitaire-util";
 
 YUI.add("king-albert", function (Y) {
 
 var Solitaire = Y.Solitaire,
-    Util = SolitaireUtil,
     KingAlbert = Y.Solitaire.KingAlbert = instance(Solitaire, {
 	fields: ["Foundation", "Tableau", "Reserve"],
 

@@ -1,5 +1,5 @@
 import { instance } from "../src/util";
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil } from "../src/solitaire-util";
 
 YUI.add("forty-thieves", function (Y) {
 

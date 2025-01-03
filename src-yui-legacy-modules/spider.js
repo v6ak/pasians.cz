@@ -1,11 +1,10 @@
 import { instance } from "../src/util";
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil as Util} from "../src/solitaire-util";
 
 YUI.add("spider", function (Y) {
 
 var availableMoves = 0,
     Solitaire = Y.Solitaire,
-    Util = SolitaireUtil,
     Spider = Solitaire.Spider = instance(Solitaire, {
 	fields: ["Foundation", "Deck", "Tableau"],
 

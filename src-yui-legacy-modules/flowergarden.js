@@ -1,11 +1,10 @@
 import { instance } from "../src/util";
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil as Util } from "../src/solitaire-util";
 
 YUI.add("flower-garden", function (Y) {
 
 var availableMoves = 0,
     Solitaire = Y.Solitaire,
-    Util = SolitaireUtil,
     FlowerGarden = Y.Solitaire.FlowerGarden = instance(Solitaire, {
 	offset: {left: function () { return Solitaire.Card.base.width * 1.5; }, top: 70},
 	fields: ["Foundation", "Reserve", "Tableau"],

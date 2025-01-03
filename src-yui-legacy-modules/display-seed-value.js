@@ -1,12 +1,10 @@
-import { SolitaireUtil } from "./util";
+import { SolitaireUtil as Util } from "../src/solitaire-util";
 
 /*
  * Display the foundation seed rank
  */
 YUI.add("display-seed-value", function (Y) {
-	var Solitaire = Y.Solitaire,
-	    Util = SolitaireUtil,
-	    supportedGames = ["Agnes", "Canfield"],
+	var supportedGames = ["Agnes", "Canfield"],
 	    rankContainer = Util.cacheNode("#seed-value-bar"),
 	    rankNode = Util.cacheNode("#seed-value");
 
