@@ -1,9 +1,8 @@
-YUI.add("solitaire-autoplay", function (Y) {
-	Y.namespace("Solitaire.Autoplay");
+import { use } from "./yui-modules-interop";
 
-	var Solitaire = Y.Solitaire,
-	    Autoplay = Solitaire.Autoplay,
-	    whenWon = true,
+const Y = use("solitaire"), Solitaire = Y.Solitaire;
+
+	var whenWon = true,
 	    autoPlayInterval = null,
 	    autoPlayable = ["Klondike", "Klondike1T", "FortyThieves", "GClock", "Freecell", "FlowerGarden", "Yukon", "BakersGame", "BakersDozen", "Eightoff", "LaBelleLucie", "TheFan", "Alternations", "DoubleKlondike", "KingAlbert"];
 
@@ -61,7 +60,7 @@ YUI.add("solitaire-autoplay", function (Y) {
 		return !stop;
 	}
 
-	Y.mix(Autoplay, {
+	export const Autoplay = {
 		enable: function () {
 			whenWon = true;
 		},
@@ -73,5 +72,4 @@ YUI.add("solitaire-autoplay", function (Y) {
 		isEnabled: function () {
 			return whenWon;
 		}
-	});
-}, "0.0.1", {requires: ["solitaire"]});
+	};

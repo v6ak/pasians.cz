@@ -1,3 +1,5 @@
+import { Autoplay } from "../src/autoplay";
+
 /*
  * Automatically solve a game of Freecell
  */
@@ -141,7 +143,7 @@ YUI.add("solver-freecell", function (Y) {
 		},
 
 		pause: function () {
-			Solitaire.Autoplay.enable();
+			Autoplay.enable();
 
 			window.clearTimeout(this.timer);
 			this.timer = null;
@@ -203,7 +205,7 @@ YUI.add("solver-freecell", function (Y) {
 
 			if (!this.remainingMoves) { return; }
 
-			Solitaire.Autoplay.disable();
+			Autoplay.disable();
 
 			withSelector("#solver-bar .play", function (node) {
 				node.removeClass("play");

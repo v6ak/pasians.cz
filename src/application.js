@@ -10,6 +10,7 @@ import { Spider } from "../src/spider";
 import { Spider1S } from "../src/spider1s";
 import { Spider2S } from "../src/spider2s";
 import { AutoTurnover } from "../src/auto-turnover";
+import { Autoplay } from "./autoplay";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
@@ -84,7 +85,6 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 	        "statistics",
 		"win-display",
 		//"solver-freecell",
-		"solitaire-autoplay",
 	        // "solitaire-ios",
 		//"display-seed-value",
 		"analytics"],
@@ -415,13 +415,11 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 
 			autoplay: {
 				set: function (value) {
-					var autoplay = Y.Solitaire.Autoplay;
-
-					value ? autoplay.enable() : autoplay.disable();
+					value ? Autoplay.enable() : Autoplay.disable();
 				},
 
 				get: function () {
-					return Y.Solitaire.Autoplay.isEnabled();
+					return Autoplay.isEnabled();
 				}
 			},
 
