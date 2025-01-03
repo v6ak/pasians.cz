@@ -1,8 +1,7 @@
-YUI.add("analytics", function (Y) {
+import { use } from "./yui-modules-interop";
 
-var Solitaire = Y.Solitaire,
-    Analytics = Y.namespace("Solitaire.Analytics"),
-    /* minimum number of moves for a new game to be considered started */
+const Y = use("solitaire"), Solitaire = Y.Solitaire;
+var /* minimum number of moves for a new game to be considered started */
     minMoves = 5,
     totalMoves = 0,
     previousGame,
@@ -42,7 +41,7 @@ Y.on("popup", function (popup) {
 	Analytics.track("Menus", "Show", popup);
 });
 
-Y.mix(Analytics, {
+export const Analytics = {
 	/* TODO this interface is copped from GA
 	 * think harder
 	 */
@@ -50,6 +49,4 @@ Y.mix(Analytics, {
 		if (typeof _gaq === "undefined") { return; }
 		_gaq.push(["_trackEvent", category, event, name, value, nointeract]);
 	}
-});
-
-}, "1.0.0", {requires: ["solitaire"]});
+};

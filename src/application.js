@@ -12,6 +12,7 @@ import { Spider2S } from "../src/spider2s";
 import { AutoTurnover } from "../src/auto-turnover";
 import { Autoplay } from "./autoplay";
 import { Statistics } from "./statistics";
+import { Analytics } from "./analytics";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
@@ -86,7 +87,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 		//"solver-freecell",
 	        // "solitaire-ios",
 		//"display-seed-value",
-		"analytics"],
+		],
 
 	nameMap = {
 			/*Accordion: "Accordion",
@@ -924,7 +925,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 		Y.on("click", newGameAndReload, Y.one("#new-deal"));
 		Y.on("click", Statistics.statsDisplay, Y.one("#stats"));
 		Y.on("submit", function () {
-			Y.Solitaire.Analytics.track("Donations", "Click", "Paypal button");
+			Analytics.track("Donations", "Click", "Paypal button");
 		}, Y.one("#donate"));
 
 
