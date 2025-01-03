@@ -1,8 +1,8 @@
 import './yui-loader';
 
-import '../src-yui-legacy-modules/extend-array.js';
-import '../src-yui-legacy-modules/extend-function.js';
-import '../src-yui-legacy-modules/extend-object.js';
+import './extend-array.js';
+import './extend-function.js';
+import './extend-object.js';
 
 import '../src-yui-legacy-modules/analytics.js';
 import '../src-yui-legacy-modules/solitaire.js';
