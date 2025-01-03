@@ -1,15 +1,16 @@
 import { SolitaireUtil } from "../src/solitaire-util";
+import { use } from "../src/yui-modules-interop";
+
+const Y = use("solitaire", "array-extras");
 
 /*
  * record win/lose records, streaks, etc
  */
-YUI.add("statistics", function (Y) {
 	var loaded,
 	    won,
 	    enabled = true,
 	    localStorage = window.localStorage,
 	    Solitaire = Y.Solitaire,
-	    Statistics = Y.namespace("Solitaire.Statistics"),
 	    isAttached = false,
 	    cacheNode = SolitaireUtil.cacheNode,
 	    selectedGame,
@@ -57,8 +58,6 @@ YUI.add("statistics", function (Y) {
 	    statsCurrentStreak = cacheNode("#stats-currentstreak"),
 	    statsBestStreak = cacheNode("#stats-beststreak"),
 	    statsGamesPlayed = cacheNode("#stats-gamesplayed");
-
-	if (!localStorage) { return; }
 
 	Y.on("newGame", function () {
 		if (loaded) { recordLose(loaded); }
@@ -200,7 +199,7 @@ YUI.add("statistics", function (Y) {
 		};
 	}
 
-	Y.mix(Statistics, {
+	export const Statistics = {
 		statsDisplay: function (name) {
 			var gameName = typeof name === "string" ? name : Solitaire.game.name(),
 			    stats = getRecord(gameName),
@@ -251,6 +250,4 @@ YUI.add("statistics", function (Y) {
 		disable: function () {
 			enabled = false;
 		}
-	});
-
-}, "0.0.1", {requires: ["solitaire", "array-extras"]});
+	};

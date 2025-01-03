@@ -1,4 +1,5 @@
 import { Autoplay } from "../src/autoplay";
+import { Statistics } from "../src/statistics";
 
 /*
  * Automatically solve a game of Freecell
@@ -187,7 +188,7 @@ YUI.add("solver-freecell", function (Y) {
 			var current = this.remainingMoves,
 			    next = this.remainingMoves.next;
 
-			Solitaire.Statistics.disable();
+			Statistics.disable();
 			Solitaire.WinDisplay.disable();
 
 			this.playCurrent(game);
@@ -433,4 +434,4 @@ YUI.add("solver-freecell", function (Y) {
 	Y.on("beforeSetup", function () {
 		FreecellSolver.resume(true);
 	});
-}, "0.0.1", {requires: ["solitaire", "statistics", "win-display"]});
+}, "0.0.1", {requires: ["solitaire", "win-display"]});
