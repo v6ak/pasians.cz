@@ -1,9 +1,10 @@
-import { instance } from "../src/util";
+import { instance } from "./util";
+import { use } from "./yui-modules-interop";
 
-YUI.add("freecell", function (Y) {
+const Y = use("solitaire");
 
-var Solitaire = Y.Solitaire,
-    Freecell = Y.Solitaire.Freecell =  instance(Solitaire, {
+const Solitaire = Y.Solitaire;
+export const Freecell = instance(Solitaire, {
 	fields: ["Foundation", "Reserve", "Tableau"],
 
 	deal: function () {
@@ -20,6 +21,8 @@ var Solitaire = Y.Solitaire,
 			if (stack === stacks.length) { stack = 0; }
 		}
 	},
+
+	name: () => "Freecell",
 
 	openSlots: function (exclude) {
 		var total = 1,
@@ -168,4 +171,3 @@ Y.mix(Freecell.Tableau.Stack, {
 	}
 }, true);
 
-}, "0.0.1", {requires: ["solitaire"]});

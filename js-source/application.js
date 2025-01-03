@@ -3,8 +3,12 @@ import hraciKartyCz from '../hracikarty.png';
 import { setClass, normalize } from "../src/util";
 import { yui } from "../src/yui-modules-interop"
 import { SaveManager } from "../src/save-manager";
+import { Freecell } from "../src/freecell";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
+
+// Games that are converted from YUI modules to ES modules
+const GAMES_BY_NAME = {Freecell};
 
 (function () {
 	const MIN_SIDE_AD_ALWAYS_ENABLED = 768;
@@ -827,7 +831,8 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 		    m;
 
 		for (m in games) {
-			if (games.hasOwnProperty(m)) {
+			const className = games[m];
+			if (games.hasOwnProperty(m) && !GAMES_BY_NAME[className]) {
 				modules.unshift(m);
 			}
 		}
@@ -1066,7 +1071,12 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 	}
 
 	function lookupGame(name) {
-		return Y.Solitaire[games[name]] || Y.Solitaire[name];
+		const game = Y.Solitaire[games[name]] || Y.Solitaire[name] || GAMES_BY_NAME[games[name]] || GAMES_BY_NAME[name];
+		if (game) {
+			return game;
+		} else {
+			throw new Error('Game not found: ' + game)
+		}
 	}
 	
 	function load() {

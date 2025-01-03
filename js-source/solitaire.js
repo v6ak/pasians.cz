@@ -38,9 +38,7 @@ Y.mix(Solitaire, {
 	noop: function () {},
 
 	name: function () {
-		var p;
-
-		for (p in Solitaire) {
+		for (let p in Solitaire) {
 			if (Solitaire.hasOwnProperty(p) && Solitaire[p] === Game) { return p; }
 		}
 	},
