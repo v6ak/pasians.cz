@@ -38,9 +38,7 @@ Y.mix(Solitaire, {
 	noop: function () {},
 
 	name: function () {
-		var p;
-
-		for (p in Solitaire) {
+		for (let p in Solitaire) {
 			if (Solitaire.hasOwnProperty(p) && Solitaire[p] === Game) { return p; }
 		}
 	},
@@ -255,6 +253,7 @@ Y.mix(Solitaire, {
 			container: Solitaire.selector,
 			nodes: ".card"
 		});
+		console.log({del})
 		
 		del.dd.plug(Y.Plugin.DDProxy, {
 			borderStyle: "none",
