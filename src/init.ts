@@ -1,3 +1,4 @@
+// we want the side effect of loaded modules…
 import './yui-loader';
 
 import './extend-array.js';
@@ -6,8 +7,8 @@ import './extend-object.js';
 
 import '../src-yui-legacy-modules/analytics.js';
 import '../src-yui-legacy-modules/solitaire.js';
-import '../src-yui-legacy-modules/win-display.js';
-import '../src/auto-turnover';    // we want the side effect
-import './autoplay.js';    // we want the side effect
+import './win-display';
+import './auto-turnover';
+import './autoplay.js';
 import './statistics';
 import './application';

@@ -83,7 +83,6 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 		"json-parse",
 		"json-stringify",
 		"tabview",
-		"win-display",
 		//"solver-freecell",
 	        // "solitaire-ios",
 		//"display-seed-value",

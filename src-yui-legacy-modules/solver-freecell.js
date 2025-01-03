@@ -1,5 +1,6 @@
 import { Autoplay } from "../src/autoplay";
 import { Statistics } from "../src/statistics";
+import { WinDisplay } from "../src/win-display";
 
 /*
  * Automatically solve a game of Freecell
@@ -189,7 +190,7 @@ YUI.add("solver-freecell", function (Y) {
 			    next = this.remainingMoves.next;
 
 			Statistics.disable();
-			Solitaire.WinDisplay.disable();
+			WinDisplay.disable();
 
 			this.playCurrent(game);
 

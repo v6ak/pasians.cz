@@ -1,18 +1,18 @@
+/*
+ * Reward the player when they win
+ */
 import { initGameWonAd } from "../src/banners";
 import { styleForNoPopup, styleForPopup } from "../src/dialogs";
 import { SolitaireUtil } from "../src/solitaire-util";
 import { Breakout } from "../src/yui-breakout";
 import { Statistics } from "../src/statistics";
+import { use } from "./yui-modules-interop";
 
-/*
- * Reward the player when they win
- */
-YUI.add("win-display", function (Y) {
+const Y = use("solitaire", "array-extras"), Solitaire = Y.Solitaire;
+
 	var loaded,
 	    won,
 	    enabled = true,
-	    Solitaire = Y.Solitaire,
-	    WinDisplay = Y.namespace("Solitaire.WinDisplay"),
 	    winDisplayTimer,
 	    isAttached = false,
 	    cacheNode = SolitaireUtil.cacheNode,
@@ -284,7 +284,7 @@ YUI.add("win-display", function (Y) {
 		WinDisplay.winDisplay(delay + 200);
 	}
 
-	Y.mix(WinDisplay, {
+	export const WinDisplay = {
 		winDisplay: function (delay) {
 			winDisplayTimer = setTimeout(function () {
 				var gameName = Solitaire.game.name(),
@@ -315,7 +315,7 @@ YUI.add("win-display", function (Y) {
 		disable: function () {
 			enabled = false;
 		}
-	});
+	};
 
 	winScreens.push(explodeFoundations);
 	if (window.HTMLCanvasElement) {
@@ -324,4 +324,3 @@ YUI.add("win-display", function (Y) {
 	if (location.search.indexOf('fake-won') != -1) {
 		window.addEventListener('load', () => setTimeout(() => explodeFoundations(), 1000))
 	}
-}, "0.0.1", {requires: ["solitaire", "array-extras"]});
