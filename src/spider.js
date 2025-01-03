@@ -1,8 +1,9 @@
 import { instance } from "./util";
 import { SolitaireUtil as Util} from "./solitaire-util";
 import { use } from "./yui-modules-interop";
+import { AutoStackClear } from "./auto-stack-clear";
 
-const Y = use('solitaire', "auto-stack-clear"), Solitaire = Y.Solitaire;
+const Y = use('solitaire'), Solitaire = Y.Solitaire;
 
 var availableMoves = 0;
 
@@ -11,7 +12,7 @@ export const Spider = instance(Solitaire, {
 	fields: ["Foundation", "Deck", "Tableau"],
 
 	createEvents: function () {
-		Solitaire.AutoStackClear.register();
+		AutoStackClear.register();
 		Solitaire.createEvents.call(this);
 	},
 
