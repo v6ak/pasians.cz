@@ -68,12 +68,10 @@ export function pickRandomBanner(banners: Banner[]): Banner|null {
     }
     const totalWeight = onlyApplicable(banners).map(x => x.weight).reduce((x, y) => x+y);
     const randomValue = Math.random() * totalWeight;
-    console.log({randomValue})
     let cumulativeWeight = 0;
     for (const banner of banners) {
         const weightMin = cumulativeWeight;
         const weightMax = cumulativeWeight + banner.weight;
-        console.log({randomValue, weightMin, weightMax})
         if ((weightMin <= randomValue) && (randomValue < weightMax)) {
             return banner;
         }
