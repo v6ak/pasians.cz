@@ -924,7 +924,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 		Y.on("click", showPopup.partial("Rules"), Y.one("#rules"));
 		Y.on("click", showPopup.partial("About"), Y.one("#about"));
 		Y.on("click", function () { active.game.undo(); }, Y.one("#undo"));
-		Y.on("click", newGame, Y.one("#new-deal"));
+		Y.on("click", newGameAndReload, Y.one("#new-deal"));
 		Y.on("click", Y.Solitaire.Statistics.statsDisplay, Y.one("#stats"));
 		Y.on("submit", function () {
 			Y.Solitaire.Analytics.track("Donations", "Click", "Paypal button");
@@ -1150,6 +1150,11 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 		clearDOM();
 		game.cleanup();
 		game.newGame();
+	}
+
+	function newGameAndReload() {
+		newGame();
+		location.reload();
 	}
 
 	function exportAPI() {
