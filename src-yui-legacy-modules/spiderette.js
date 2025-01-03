@@ -1,9 +1,9 @@
 import { Klondike } from "../src/klondike";
+import { Spider } from "../src/spider";
 import { instance } from "../src/util";
 
 YUI.add("spiderette", function (Y) {
 	var Solitaire = Y.Solitaire,
-	    Spider = Solitaire.Spider,
 	    Spiderette = Y.Solitaire.Spiderette = instance(Spider, {
 		height: Klondike.height,
 		deal: Klondike.deal,

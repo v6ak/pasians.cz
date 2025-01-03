@@ -1,11 +1,13 @@
-import { instance } from "../src/util";
-import { SolitaireUtil as Util} from "../src/solitaire-util";
+import { instance } from "./util";
+import { SolitaireUtil as Util} from "./solitaire-util";
+import { use } from "./yui-modules-interop";
 
-YUI.add("spider", function (Y) {
+const Y = use('solitaire', "auto-stack-clear"), Solitaire = Y.Solitaire;
 
-var availableMoves = 0,
-    Solitaire = Y.Solitaire,
-    Spider = Solitaire.Spider = instance(Solitaire, {
+var availableMoves = 0;
+
+export const Spider = instance(Solitaire, {
+	name: () => 'Spider',
 	fields: ["Foundation", "Deck", "Tableau"],
 
 	createEvents: function () {
@@ -187,4 +189,3 @@ Y.mix(Spider.Tableau.Stack, {
 		card.top = top;
 	}
 }, true);
-}, "0.0.1", {requires: ["auto-stack-clear"]});

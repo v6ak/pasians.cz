@@ -1,8 +1,9 @@
+import { Spider } from "../src/spider";
 import { instance } from "../src/util";
 
 YUI.add("simple-simon", function (Y) {
 	var Solitaire = Y.Solitaire,
-	    SimpleSimon = Solitaire.SimpleSimon = instance(Solitaire.Spider, {
+	    SimpleSimon = Solitaire.SimpleSimon = instance(Spider, {
 		fields: ["Foundation", "Tableau"],
 
 		deal: function () {
@@ -26,9 +27,9 @@ YUI.add("simple-simon", function (Y) {
 
 		turnOver: Solitaire.noop,
 		Deck: instance(Solitaire.Deck),
-		Foundation: instance(Solitaire.Spider.Foundation),
+		Foundation: instance(Spider.Foundation),
 
-		Card: instance(Solitaire.Spider.Card, {
+		Card: instance(Spider.Card, {
 			origin: {
 				left: function () {
 					return Solitaire.Card.width * 6;

@@ -12,7 +12,4 @@ import '../src-yui-legacy-modules/auto-turnover.js';
 import '../src-yui-legacy-modules/autoplay.js';
 import '../src-yui-legacy-modules/ie-opera-background-fix.js';
 import '../src-yui-legacy-modules/statistics.js';
-import '../src-yui-legacy-modules/spider.js';
-import '../src-yui-legacy-modules/spider1s.js';
-import '../src-yui-legacy-modules/spider2s.js';
 import '../src-yui-legacy-modules/application.js';
