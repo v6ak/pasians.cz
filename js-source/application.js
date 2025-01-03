@@ -1,8 +1,7 @@
 import { styleForNoPopup, styleForPopup } from "../src/dialogs";
 import hraciKartyCz from '../hracikarty.png';
 import { setClass, normalize } from "../src/util";
-import { yui } from "../src/yui-modules-interop";
-import { SolitaireUtil } from "./util";
+import { yui } from "../src/yui-modules-interop"
 import { SaveManager } from "../src/save-manager";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
@@ -672,7 +671,6 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 
 		set: function (size) {
 			var theme = this.all[this.current][size];
-			console.log("theme.borderRadius", theme.borderRadius)
 
 			Y.mix(Y.Solitaire.Card.base, {
 				theme: this.basePath(size),
@@ -1031,7 +1029,6 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 		function createMenuStateSetter(state){
 			return function(e){
 				setMenuExpanded(state);
-				console.log(e)
 				e.stopPropagation();
 			}
 		}
@@ -1042,7 +1039,6 @@ const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"
 
 	
 	function menuResized() {
-		console.log("menu resized");
 		let menuElement = document.getElementById("menu");
 		let isOneLine = Array.from(menuElement.childNodes).
 			map(function(a){
