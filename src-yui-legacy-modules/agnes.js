@@ -1,5 +1,6 @@
 import { instance } from "../src/util";
 import { SolitaireUtil } from "../src/solitaire-util";
+import { Klondike } from "../src/klondike";
 
 YUI.add("agnes", function (Y) {
 	function inSeries(first, second) {
@@ -7,7 +8,6 @@ YUI.add("agnes", function (Y) {
 	}
 
 	var Solitaire = Y.Solitaire,
-	    Klondike = Solitaire.Klondike,
 	    seedRank = SolitaireUtil.seedRank,
 	    Agnes = Solitaire.Agnes = instance(Klondike, {
 		fields: ["Foundation", "Deck", "Waste", "Tableau", "Reserve"],

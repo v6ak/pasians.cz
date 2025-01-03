@@ -4,11 +4,13 @@ import { setClass, normalize } from "../src/util";
 import { yui } from "../src/yui-modules-interop"
 import { SaveManager } from "../src/save-manager";
 import { Freecell } from "../src/freecell";
+import { Klondike } from "../src/klondike";
+import { Klondike1T } from "../src/klondike1t";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
 // Games that are converted from YUI modules to ES modules
-const GAMES_BY_NAME = {Freecell};
+const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T};
 
 (function () {
 	const MIN_SIDE_AD_ALWAYS_ENABLED = 768;

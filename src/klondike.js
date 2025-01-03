@@ -1,10 +1,12 @@
 import { instance } from "../src/util";
 import { SolitaireUtil } from "../src/solitaire-util";
+import { use } from "../src/yui-modules-interop";
 
-YUI.add("klondike", function (Y) {
+const Y = use('solitaire');
 
-var Solitaire = Y.Solitaire,
-    Klondike = Y.Solitaire.Klondike = instance(Solitaire, {
+const Solitaire = Y.Solitaire;
+export const Klondike = instance(Solitaire, {
+	name: () => "Klondike",
 	fields: ["Foundation", "Deck", "Waste", "Tableau"],
 	cardsPerTurnOver: 3,
 
@@ -229,6 +231,3 @@ Y.mix(Klondike.Deck.Stack, {
 		this.node.addClass("playable");
 	}
 }, true);
-
-
-}, "0.0.1", {requires: []});
