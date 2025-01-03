@@ -1,9 +1,9 @@
+import { Solitaire } from "../src/solitaire";
 import { instance } from "../src/util";
 
 YUI.add("russian-solitaire", function (Y) {
 
-  var Solitaire = Y.Solitaire,
-    Yukon = Solitaire.Yukon,
+  var Yukon = Solitaire.Yukon,
     RussianSolitaire = Solitaire.RussianSolitaire = instance(Yukon, {
       Card: instance(Yukon.Card)
     });

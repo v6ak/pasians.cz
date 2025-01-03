@@ -1,11 +1,11 @@
 import { instance } from "../src/util";
 import { SolitaireUtil as Util } from "../src/solitaire-util";
+import { Solitaire } from "../src/solitaire";
 
 YUI.add("flower-garden", function (Y) {
 
 var availableMoves = 0,
-    Solitaire = Y.Solitaire,
-    FlowerGarden = Y.Solitaire.FlowerGarden = instance(Solitaire, {
+    FlowerGarden = Solitaire.FlowerGarden = instance(Solitaire, {
 	offset: {left: function () { return Solitaire.Card.base.width * 1.5; }, top: 70},
 	fields: ["Foundation", "Reserve", "Tableau"],
 
@@ -211,4 +211,4 @@ Y.mix(FlowerGarden.Reserve.Stack, {
 	}
 }, true);
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

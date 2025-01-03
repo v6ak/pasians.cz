@@ -1,9 +1,9 @@
+import { Solitaire } from "../src/solitaire";
 import { instance } from "../src/util";
 
 YUI.add("pyramid", function (Y) {
 
-var Solitaire = Y.Solitaire,
-    Pyramid = Y.Solitaire.Pyramid = instance(Solitaire, {
+var Pyramid = Solitaire.Pyramid = instance(Solitaire, {
 	fields: ["Foundation", "Deck", "Waste", "Tableau"],
 	width: function () { return Solitaire.Card.base.width * 10; },
 
@@ -288,4 +288,4 @@ Y.mix(Pyramid.Deck.Stack, {
 
 Pyramid.Waste.Stack.updateDragGroups = Pyramid.Deck.Stack.updateDragGroups;
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

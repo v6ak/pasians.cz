@@ -13,6 +13,7 @@ import { AutoTurnover } from "../src/auto-turnover";
 import { Autoplay } from "./autoplay";
 import { Statistics } from "./statistics";
 import { Analytics } from "./analytics";
+import { Solitaire } from "./solitaire";
 
 const CREDITS_HRACIKARTY = '<a href="https://www.hracikarty.cz/" target="_blank"><img src="' + hraciKartyCz + '" width="142" height="149"></a>';
 
@@ -425,11 +426,11 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 
 			animateCards: {
 				set: function (value) {
-					Y.Solitaire.Animation.animate = value;
+					Solitaire.Animation.animate = value;
 				},
 
 				get: function () {
-					return Y.Solitaire.Animation.animate;
+					return Solitaire.Animation.animate;
 				}
 			},
 
@@ -448,13 +449,13 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 			/*
 			enableSolver: {
 				set: function (value) {
-					var solver = Y.Solitaire.Solver.Freecell;
+					var solver = Solitaire.Solver.Freecell;
 
 					value ? solver.enable() : solver.disable();
 				},
 
 				get: function () {
-					return Y.Solitaire.Solver.Freecell.isEnabled();
+					return Solitaire.Solver.Freecell.isEnabled();
 				}
 			},
 			*/
@@ -661,8 +662,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 		},
 
 		load: function (name) {
-			var Solitaire = Y.Solitaire,
-			    base = Solitaire.Card.base,
+			var base = Solitaire.Card.base,
 			    sizes;
 
 			if (!(name in this.all)) {
@@ -679,7 +679,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 		set: function (size) {
 			var theme = this.all[this.current][size];
 
-			Y.mix(Y.Solitaire.Card.base, {
+			Y.mix(Solitaire.Card.base, {
 				theme: this.basePath(size),
 				hiddenRankHeight: theme.hiddenRankHeight,
 				rankHeight: theme.rankHeight,
@@ -990,7 +990,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 			attachEvent = "attachEvent";
 		}
 
-		window[attachEvent](Y.Solitaire.Application.resizeEvent, function () {
+		window[attachEvent](Solitaire.Application.resizeEvent, function () {
 			clearTimeout(timer);
 			timer = setTimeout(resize, delay);
 		}, false);
@@ -1011,7 +1011,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 				(makeSpaceForAd ? game.sideAdWidth() : 0),
 		    height = el.get("winHeight") - padding.y,
 		    ratio = 1;
-		Y.Solitaire.Application.windowHeight = height;
+		Solitaire.Application.windowHeight = height;
 		ratio = Math.min(
 			(width - normalize(offset.left)) / game.width(),
 			(height - normalize(offset.top)) / game.height()
@@ -1074,7 +1074,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 	}
 
 	function lookupGame(name) {
-		const game = Y.Solitaire[games[name]] || Y.Solitaire[name] || GAMES_BY_NAME[games[name]] || GAMES_BY_NAME[name];
+		const game = Solitaire[games[name]] || Solitaire[name] || GAMES_BY_NAME[games[name]] || GAMES_BY_NAME[name];
 		if (game) {
 			return game;
 		} else {
@@ -1156,7 +1156,7 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 	}
 
 	function exportAPI() {
-		Y.Solitaire.Application = {
+		Solitaire.Application = {
 			windowHeight: 0,
 			resizeEvent: "resize",
 			GameChooser: GameChooser,
@@ -1240,12 +1240,12 @@ const GAMES_BY_NAME = {Freecell, Klondike, Klondike1T, Spider, Spider1S, Spider2
 
 			Y.Array.each(["s", "h", "c", "d"], function (suit) {
 				for (rank = 1; rank <= 13; rank++) {
-					this.load(Y.Solitaire.Card.base.theme + "/" + suit + rank + ".png");
+					this.load(Solitaire.Card.base.theme + "/" + suit + rank + ".png");
 				}
 			}, this);
 
-			this.load(Y.Solitaire.Card.base.theme + "/facedown.png");
-			this.load(Y.Solitaire.Card.base.theme + "/freeslot.png");
+			this.load(Solitaire.Card.base.theme + "/facedown.png");
+			this.load(Solitaire.Card.base.theme + "/freeslot.png");
 
 			/*Y.Array.each(icons, function (image) {
 				this.load("layouts/mini/" + image + ".png");

@@ -1,9 +1,7 @@
+import { Solitaire } from "./solitaire";
 import { instance } from "./util";
-import { use } from "./yui-modules-interop";
+import { Y } from "./yui-modules-interop";
 
-const Y = use("solitaire");
-
-const Solitaire = Y.Solitaire;
 export const Freecell = instance(Solitaire, {
 	fields: ["Foundation", "Reserve", "Tableau"],
 

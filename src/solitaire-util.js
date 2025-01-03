@@ -1,7 +1,6 @@
 import { use } from "../src/yui-modules-interop";
-
-const Y = use('solitaire', 'array-extras')
-const Solitaire = Y.Solitaire;
+import { Game, Solitaire } from "./solitaire";
+const Y = use('array-extras')
 
 export var SolitaireUtil = {
 	flipStacks: function (afterCard, delay, interval) {

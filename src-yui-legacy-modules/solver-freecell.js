@@ -1,4 +1,5 @@
 import { Autoplay } from "../src/autoplay";
+import { Game, Solitaire } from "../src/solitaire";
 import { Statistics } from "../src/statistics";
 import { WinDisplay } from "../src/win-display";
 
@@ -8,9 +9,9 @@ import { WinDisplay } from "../src/win-display";
 YUI.add("solver-freecell", function (Y) {
 	Y.namespace("Solitaire.Solver.Freecell");
 
-	Y.mix(Y.Solitaire.Solver.Freecell, {
-		enable: Y.Solitaire.noop,
-		disable: Y.Solitaire.noop,
+	Y.mix(Solitaire.Solver.Freecell, {
+		enable: Solitaire.noop,
+		disable: Solitaire.noop,
 		isEnabled: function () { return false; }
 	});
 
@@ -18,8 +19,7 @@ YUI.add("solver-freecell", function (Y) {
 
 	if (!(window.Worker && window.ArrayBuffer && window.Uint8Array)) { return; }
 
-	var Solitaire = Y.Solitaire,
-	    FreecellSolver = Solitaire.Solver.Freecell,
+	var FreecellSolver = Solitaire.Solver.Freecell,
 	    suitTable = {
 		s: 0,
 		h: 1,
@@ -435,4 +435,4 @@ YUI.add("solver-freecell", function (Y) {
 	Y.on("beforeSetup", function () {
 		FreecellSolver.resume(true);
 	});
-}, "0.0.1", {requires: ["solitaire", "win-display"]});
+}, "0.0.1", {requires: ["win-display"]});

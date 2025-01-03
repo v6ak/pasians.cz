@@ -1,7 +1,8 @@
-import { initSideAd } from "../src/banners";
-import { argsArray, instance, setClass, normalize } from "../src/util";
-import { CardDelegate } from '../src/card-delegate';
-import { SaveManager } from "../src/save-manager";
+import { initSideAd } from "./banners";
+import { argsArray, instance, setClass, normalize } from "./util";
+import { CardDelegate } from './card-delegate';
+import { SaveManager } from "./save-manager";
+import { use } from "./yui-modules-interop";
 
 let adsInitialized = false;
 
@@ -14,13 +15,9 @@ function loadAds(show) {
 
 export var Game;
 
+const Y = use('event-touch', 'async-queue', "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras", "json-parse", "json-stringify");
 
-YUI().add("solitaire", function (Y) {
-
-var Solitaire = Y.namespace("Solitaire");
-window.Solitaire = Solitaire;
-
-Y.mix(Solitaire, {
+export const Solitaire = {
 	activeCard: null,
 	moves: null,
 	selector: "#solitaireBox",
@@ -98,7 +95,7 @@ Y.mix(Solitaire, {
 	},
 
 	unanimated: function (callback) {
-		var anim = Y.Solitaire.Animation,
+		var anim = Solitaire.Animation,
 		    animate = anim.animate;
 
 		anim.animate = false;
@@ -207,7 +204,7 @@ Y.mix(Solitaire, {
 
 		this.stationary(function () {
 			this.init();
-			Y.Solitaire.Animation.initQueue();
+			Solitaire.Animation.initQueue();
 			this.createStacks();
 			this.createEvents();
 			this.createDraggables();
@@ -219,14 +216,14 @@ Y.mix(Solitaire, {
 		Solitaire.moves = [];
 		Y.fire("afterSetup");
 
-		Y.Solitaire.Animation.dealing = true;
+		Solitaire.Animation.dealing = true;
 
 		Game.eachStack(function (s) {
 			s.updateCardsStyle();
 			s.updateCardsPosition();
 		});
 
-		Y.Solitaire.Animation.dealing = false;
+		Solitaire.Animation.dealing = false;
 	},
 
 	createEvents: function () {
@@ -390,7 +387,7 @@ Y.mix(Solitaire, {
 	},
 
 	scale: function (scale) {
-		var Card = Y.Solitaire.Card,
+		var Card = Solitaire.Card,
 		    base = Card.base,
 		    prop;
 
@@ -479,9 +476,9 @@ Y.mix(Solitaire, {
 	endTurn: function () {
 		Y.fire("endTurn");
 	}
-});
+};
 
-Y.Solitaire.Events = {
+Solitaire.Events = {
 		click: function (e) {
 			var card = e.target.getData("target");
 
@@ -628,7 +625,7 @@ Y.Solitaire.Events = {
 		}
 };
 
-Y.Solitaire.Deck = {
+Solitaire.Deck = {
 		count: 1,
 		suits: ["c", "d", "h", "s"],
 
@@ -693,7 +690,7 @@ Y.Solitaire.Deck = {
 		}
 	};
 
-Y.Solitaire.Card = {
+Solitaire.Card = {
 		zIndex: 1,
 		index: -1,
 		width: null,
@@ -719,12 +716,12 @@ Y.Solitaire.Card = {
 			left: function () {
 				var offset = Solitaire.container().getX();
 				
-				return -offset - Y.Solitaire.Card.width;
+				return -offset - Solitaire.Card.width;
 			},
 			top: function () {
 				var offset = Solitaire.container().getY();
 
-				return -offset - Y.Solitaire.Card.height;
+				return -offset - Solitaire.Card.height;
 			}
 		},
 
@@ -958,7 +955,7 @@ Y.Solitaire.Card = {
 				this.node.setStyles({left: normalize(origin.left), top: normalize(origin.top)});
 			}
 
-			Y.Solitaire.Animation.init(this, to, fields);
+			Solitaire.Animation.init(this, to, fields);
 		},
 
 		pushPosition: function () {
@@ -1009,7 +1006,7 @@ Y.Solitaire.Card = {
 		}
 	};
 
-Y.Solitaire.Stack = {
+Solitaire.Stack = {
 		cards: null,
 		node: null,
 		images: {
@@ -1145,8 +1142,8 @@ Y.Solitaire.Stack = {
 		},
 
 		layout: function (layout) {
-			var hoffset = layout.hoffset * Y.Solitaire.Card.width,
-			    voffset = layout.voffset * Y.Solitaire.Card.height,
+			var hoffset = layout.hoffset * Solitaire.Card.width,
+			    voffset = layout.voffset * Solitaire.Card.height,
 			    gameOffset = Game.offset,
 			    self = this;
 
@@ -1287,8 +1284,8 @@ Y.Solitaire.Stack = {
 			return {
 				left: Math.floor(this.left),
 				top: Math.floor(this.top),
-				width: Math.floor(Y.Solitaire.Card.width),
-				height: Math.floor(Y.Solitaire.Card.height)
+				width: Math.floor(Solitaire.Card.width),
+				height: Math.floor(Solitaire.Card.height)
 			};
 		},
 
@@ -1358,7 +1355,7 @@ Y.Solitaire.Stack = {
 		update: function () {}
 	};
 
-Y.Solitaire.Animation = {
+Solitaire.Animation = {
 		animate: true,
 		dealing: false,
 		duration: 0.5, // seconds
@@ -1583,8 +1580,3 @@ var Undo = {
 		return [to, from];
 	}
 };
-Object.entries({
-	Game, Solitaire, CardDelegate
-}).forEach(([key, value]) => window[key] = value);
-}, "0.0.1", {requires: ['event-touch', 'async-queue', "dd", "dd-plugin", "dd-delegate", "anim", "transition", "async-queue", "cookie", "array-extras", "json-parse", "json-stringify"]});
-

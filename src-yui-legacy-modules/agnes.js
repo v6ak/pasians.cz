@@ -1,14 +1,14 @@
 import { instance } from "../src/util";
 import { SolitaireUtil } from "../src/solitaire-util";
 import { Klondike } from "../src/klondike";
+import { Solitaire } from "./solitaire";
 
 YUI.add("agnes", function (Y) {
 	function inSeries(first, second) {
 		return (first + 1) % 13 === second % 13;
 	}
 
-	var Solitaire = Y.Solitaire,
-	    seedRank = SolitaireUtil.seedRank,
+	var seedRank = SolitaireUtil.seedRank,
 	    Agnes = Solitaire.Agnes = instance(Klondike, {
 		fields: ["Foundation", "Deck", "Waste", "Tableau", "Reserve"],
 

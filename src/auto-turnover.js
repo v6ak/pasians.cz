@@ -1,6 +1,5 @@
-import { use } from "../src/yui-modules-interop";
+import { Y } from "../src/yui-modules-interop";
 
-const Y = use("solitaire");
 /*
  * automatically turn over the first open faceup card in a stack
  */

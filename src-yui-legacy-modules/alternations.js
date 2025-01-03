@@ -1,9 +1,9 @@
 import { instance } from "../src/util";
+import { Solitaire } from "./solitaire";
 
 YUI.add("alternations", function (Y) {
 
-var Solitaire = Y.Solitaire,
-    Alternations = Solitaire.Alternations = instance(Solitaire, {
+var Alternations = Solitaire.Alternations = instance(Solitaire, {
 	fields: ["Deck", "Foundation", "Tableau", "Waste"],
 
 	deal: function () {
@@ -87,7 +87,7 @@ var Solitaire = Y.Solitaire,
 		stackConfig: {
 			total: 1,
 			layout: {
-				top: function () { return Y.Solitaire.Card.height * 1.5 },
+				top: function () { return Solitaire.Card.height * 1.5 },
 				left: 0
 			}
 		},
@@ -99,7 +99,7 @@ var Solitaire = Y.Solitaire,
 		stackConfig: {
 			total: 1,
 			layout: {
-				top: function () { return Y.Solitaire.Card.height * 2.75 },
+				top: function () { return Solitaire.Card.height * 2.75 },
 				left: 0
 			}
 		},
@@ -111,8 +111,8 @@ var Solitaire = Y.Solitaire,
 			total: 7,
 			layout: {
 				hspacing: 1.25,
-				top: function () { return Y.Solitaire.Card.height * 1.5 },
-				left: function () { return Y.Solitaire.Card.width * 2.3; }
+				top: function () { return Solitaire.Card.height * 1.5 },
+				left: function () { return Solitaire.Card.width * 2.3; }
 			}
 		},
 		field: "tableau"
@@ -200,4 +200,4 @@ Y.mix(Alternations.Tableau.Stack, {
 		card.top = top;
 	}
 }, true);
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

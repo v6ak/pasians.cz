@@ -1,8 +1,8 @@
+import { Solitaire } from "../src/solitaire";
 import { instance } from "../src/util";
 
 YUI.add("tri-towers", function (Y) {
-	var Solitaire = Y.Solitaire,
-	TriTowers = Y.Solitaire.TriTowers = instance(Solitaire, {
+	var TriTowers = Solitaire.TriTowers = instance(Solitaire, {
 		fields: ["Deck", "Foundation", "Tableau"],
 
 		width: function () { return this.Card.base.width * 15; },
@@ -253,4 +253,4 @@ YUI.add("tri-towers", function (Y) {
 			card.zIndex = zIndex;
 		}
 	}, true);
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

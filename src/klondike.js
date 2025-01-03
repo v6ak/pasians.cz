@@ -1,10 +1,8 @@
 import { instance } from "../src/util";
 import { SolitaireUtil } from "../src/solitaire-util";
-import { use } from "../src/yui-modules-interop";
+import { Y } from "../src/yui-modules-interop";
+import { Solitaire } from "./solitaire";
 
-const Y = use('solitaire');
-
-const Solitaire = Y.Solitaire;
 export const Klondike = instance(Solitaire, {
 	name: () => "Klondike",
 	fields: ["Foundation", "Deck", "Waste", "Tableau"],

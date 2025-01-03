@@ -1,11 +1,11 @@
+import { Solitaire } from "../src/solitaire";
 import { Statistics } from "../src/statistics";
 
 YUI.add("solitaire-ios", function (Y) {
 	return; // mobile code needs to be reworked
 	if (!Y.UA.ios) { return; }
 
-	var Solitaire = Y.Solitaire,
-	    _scale = Solitaire.scale,
+	var _scale = Solitaire.scale,
 
 	    LANDSCAPE = 0,
 	    PORTRAIT = 1,
@@ -601,4 +601,4 @@ YUI.add("solitaire-ios", function (Y) {
 	Y.on("domready", setupUI);
 	Solitaire.padding = {x: 5, y: 5};
 	Solitaire.offset = {left: 5, top: 5};
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

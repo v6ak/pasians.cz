@@ -7,8 +7,9 @@ import { SolitaireUtil } from "../src/solitaire-util";
 import { Breakout } from "../src/yui-breakout";
 import { Statistics } from "../src/statistics";
 import { use } from "./yui-modules-interop";
+import { Game, Solitaire } from "./solitaire";
 
-const Y = use("solitaire", "array-extras"), Solitaire = Y.Solitaire;
+const Y = use("array-extras");
 
 	var loaded,
 	    won,

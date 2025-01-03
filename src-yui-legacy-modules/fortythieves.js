@@ -1,10 +1,10 @@
 import { instance } from "../src/util";
 import { SolitaireUtil } from "../src/solitaire-util";
+import { Solitaire } from "../src/solitaire";
 
 YUI.add("forty-thieves", function (Y) {
 
-var Solitaire = Y.Solitaire,
-    FortyThieves = Y.Solitaire.FortyThieves = instance(Solitaire, {
+var FortyThieves = Solitaire.FortyThieves = instance(Solitaire, {
 	fields: ["Foundation", "Deck", "Waste", "Tableau"],
 
 	deal: function () {
@@ -163,4 +163,4 @@ Y.mix(FortyThieves.Deck.Stack, {
 }, true);
 
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

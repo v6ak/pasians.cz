@@ -1,7 +1,8 @@
 import { SolitaireUtil } from "../src/solitaire-util";
 import { use } from "../src/yui-modules-interop";
+import { Solitaire } from "./solitaire";
 
-const Y = use("solitaire", "array-extras");
+const Y = use("array-extras");
 
 /*
  * record win/lose records, streaks, etc
@@ -10,7 +11,6 @@ const Y = use("solitaire", "array-extras");
 	    won,
 	    enabled = true,
 	    localStorage = window.localStorage,
-	    Solitaire = Y.Solitaire,
 	    isAttached = false,
 	    cacheNode = SolitaireUtil.cacheNode,
 	    selectedGame,

@@ -1,9 +1,9 @@
+import { Solitaire } from "../src/solitaire";
 import { Spider } from "../src/spider";
 import { instance } from "../src/util";
 
 YUI.add("simple-simon", function (Y) {
-	var Solitaire = Y.Solitaire,
-	    SimpleSimon = Solitaire.SimpleSimon = instance(Spider, {
+	var SimpleSimon = Solitaire.SimpleSimon = instance(Spider, {
 		fields: ["Foundation", "Tableau"],
 
 		deal: function () {

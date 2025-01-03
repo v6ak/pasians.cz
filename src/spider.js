@@ -1,9 +1,8 @@
 import { instance } from "./util";
 import { SolitaireUtil as Util} from "./solitaire-util";
-import { use } from "./yui-modules-interop";
+import { Y } from "./yui-modules-interop";
 import { AutoStackClear } from "./auto-stack-clear";
-
-const Y = use('solitaire'), Solitaire = Y.Solitaire;
+import { Game, Solitaire } from "./solitaire";
 
 var availableMoves = 0;
 

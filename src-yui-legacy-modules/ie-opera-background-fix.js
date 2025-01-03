@@ -32,4 +32,4 @@ YUI.add("solitaire-background-fix", function (Y) {
 
 		return _body;
 	}
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

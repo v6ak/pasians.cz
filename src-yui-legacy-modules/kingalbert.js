@@ -1,10 +1,10 @@
 import { instance } from "../src/util";
 import { SolitaireUtil as Util } from "../src/solitaire-util";
+import { Solitaire } from "../src/solitaire";
 
 YUI.add("king-albert", function (Y) {
 
-var Solitaire = Y.Solitaire,
-    KingAlbert = Y.Solitaire.KingAlbert = instance(Solitaire, {
+var KingAlbert = Solitaire.KingAlbert = instance(Solitaire, {
 	fields: ["Foundation", "Tableau", "Reserve"],
 
 	height: function () { return this.Card.base.height * 5.3; },
@@ -161,4 +161,4 @@ Y.mix(KingAlbert.Tableau.Stack, {
 }, true);
 
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

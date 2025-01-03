@@ -1,9 +1,9 @@
+import { Solitaire } from "../src/solitaire";
 import { instance } from "../src/util";
 
 YUI.add("will-o-the-wisp", function (Y) {
 
-	var Solitaire = Y.Solitaire,
-	    WillOTheWisp = Y.Solitaire.WillOTheWisp = instance(Solitaire.Spiderette, {
+	var WillOTheWisp = Solitaire.WillOTheWisp = instance(Solitaire.Spiderette, {
 		deal: function () {
 			var deck = this.deck,
 			    row;

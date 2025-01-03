@@ -1,4 +1,5 @@
 import { instance } from "../src/util";
+import { Solitaire } from "./solitaire";
 
 YUI.add("calculation", function (Y) {
 
@@ -19,8 +20,7 @@ function inRange(low, high, value) {
 	}
 }
 
-var Solitaire = Y.Solitaire,
-    Calculation = Y.Solitaire.Calculation = instance(Solitaire, {
+var Calculation = Solitaire.Calculation = instance(Solitaire, {
 	fields: ["Foundation", "Tableau", "Deck", "Waste"],
 
 	deal: function () {
@@ -188,4 +188,4 @@ Y.mix(Calculation.Tableau.Stack, {
 	}
 }, true);
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

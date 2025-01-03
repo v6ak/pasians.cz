@@ -1,8 +1,6 @@
 import { instance } from "../src/util";
 import { Freecell } from "../src/freecell";
-import { use } from "../src/yui-modules-interop";
-
-const Y = use();
+import { Y } from "../src/yui-modules-interop";
 
 export const BakersGame = instance(Freecell, {
 	Card: instance(Freecell.Card, {

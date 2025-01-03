@@ -1,5 +1,6 @@
 import { instance, normalize } from "../src/util";
 import { SolitaireUtil } from "../src/solitaire-util";
+import { Solitaire } from "../src/solitaire";
 
 YUI.add("grandfathers-clock", function (Y) {
 
@@ -22,8 +23,7 @@ function inRange(low, high, value) {
 
 Y.namespace("Solitaire.GClock");
 
-var Solitaire = Y.Solitaire,
-    GClock = Y.Solitaire.GClock = instance(Solitaire, {
+var GClock = Solitaire.GClock = instance(Solitaire, {
 	fields: ["Foundation", "Tableau"],
 
 	deal: function () {
@@ -200,4 +200,4 @@ Y.mix(GClock.Foundation.Stack, {
 	}
 }, true);
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

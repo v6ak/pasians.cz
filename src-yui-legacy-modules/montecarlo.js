@@ -1,9 +1,9 @@
+import { Game, Solitaire } from "../src/solitaire";
 import { instance } from "../src/util";
 
 YUI.add("monte-carlo", function (Y) {
 
-var Solitaire = Y.Solitaire,
-    MonteCarlo = Y.Solitaire.MonteCarlo = instance(Solitaire, {
+var MonteCarlo = Solitaire.MonteCarlo = instance(Solitaire, {
 	fields: ["Foundation", "Deck", "Tableau"],
 
 	createEvents: function () {
@@ -334,4 +334,4 @@ Y.mix(MonteCarlo.Deck.Stack, {
 	}
 }, true);
 
-}, "0.0.1", {requires: ["solitaire", "array-extras"]});
+}, "0.0.1", {requires: ["array-extras"]});

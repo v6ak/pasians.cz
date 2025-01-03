@@ -1,6 +1,5 @@
-import { use } from "./yui-modules-interop";
-
-const Y = use("solitaire"), Solitaire = Y.Solitaire;
+import { Solitaire } from "./solitaire";
+import { Y } from "./yui-modules-interop";
 
 /*
  * Stack extension class to automatically move complete stacks/runs to the foundation

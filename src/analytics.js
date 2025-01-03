@@ -1,6 +1,6 @@
-import { use } from "./yui-modules-interop";
+import { Solitaire } from "./solitaire";
+import { Y } from "./yui-modules-interop";
 
-const Y = use("solitaire"), Solitaire = Y.Solitaire;
 var /* minimum number of moves for a new game to be considered started */
     minMoves = 5,
     totalMoves = 0,

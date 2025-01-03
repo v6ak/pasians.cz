@@ -90,4 +90,4 @@ function loadLigit() {
 Y.on("newGame", loadLigit);
 Y.on("loadGame", loadLigit);
 
-}, "1.0.0", {requires: ["solitaire"]});
+}, "1.0.0", {requires: []});

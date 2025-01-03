@@ -1,3 +1,4 @@
+import { Game } from "../src/solitaire";
 import { SolitaireUtil as Util } from "../src/solitaire-util";
 
 /*
@@ -27,4 +28,4 @@ YUI.add("display-seed-value", function (Y) {
 		}
 	});
 
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

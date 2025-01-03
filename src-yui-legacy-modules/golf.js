@@ -1,8 +1,8 @@
+import { Solitaire } from "../src/solitaire";
 import { instance } from "../src/util";
 
 YUI.add("golf", function (Y) {
-	var Solitaire = Y.Solitaire,
-	Golf = Y.Solitaire.Golf = instance(Solitaire, {
+	var Golf = Solitaire.Golf = instance(Solitaire, {
 		fields: ["Deck", "Foundation", "Tableau"],
 
 		deal: function () {
@@ -185,4 +185,4 @@ YUI.add("golf", function (Y) {
 			card.zIndex = zIndex;
 		}
 	}, true);
-}, "0.0.1", {requires: ["solitaire"]});
+}, "0.0.1", {requires: []});

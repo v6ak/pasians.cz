@@ -13,3 +13,5 @@ export function use(...modules: string[]) {
 		throw new Error('not resolved: ' + modules);
 	}
 }
+
+export const Y = use();
